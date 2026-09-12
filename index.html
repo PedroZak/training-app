@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f5f7" media="(prefers-color-scheme: light)">
+  <title>Meu Treino</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Meu Treino</h1>
+    <div class="sub" id="header-sub"></div>
+  </header>
+
+  <main>
+    <section class="view" data-view="home" id="home-view"></section>
+
+    <section class="view" data-view="workouts" id="workouts-view" hidden></section>
+
+    <section class="view" data-view="calendar" id="calendar-view" hidden></section>
+
+    <section class="view" data-view="settings" hidden>
+      <div class="card">
+        <h2 style="margin-bottom:10px">Ciclo de treino</h2>
+        <div class="field-row">
+          <label>Data de início do macrociclo (semana 1)</label>
+          <input type="date" id="cycle-start-input">
+        </div>
+        <div class="field-row">
+          <label>Mesociclo</label>
+          <select id="meso-override-select">
+            <option value="auto">Automático (pela data)</option>
+            <option value="M1">Forçar M1 — Base</option>
+            <option value="M2">Forçar M2 — Força-Hipertrofia</option>
+            <option value="M3">Forçar M3 — Força Máxima</option>
+          </select>
+        </div>
+        <div class="ex-meta" id="settings-summary"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-bottom:6px">Exportar</h2>
+        <p class="ex-meta" style="margin-bottom:10px">Exporta o nome de cada exercício com o peso atual, pronto para colar na sua planilha.</p>
+        <button class="btn-secondary" id="export-csv-btn" style="width:100%;margin-bottom:8px">⬇ Exportar pesos (CSV)</button>
+        <button class="btn-secondary" id="export-json-btn" style="width:100%;margin-bottom:8px">⬇ Backup completo (JSON)</button>
+        <label class="btn-secondary" style="width:100%;display:block;text-align:center;box-sizing:border-box;cursor:pointer">
+          ⬆ Importar backup (JSON)
+          <input type="file" id="import-json-input" accept="application/json" style="display:none">
+        </label>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-bottom:10px">Zona de risco</h2>
+        <button class="btn-secondary btn-danger" id="reset-data-btn" style="width:100%">Apagar todos os dados</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="timer-overlay" id="timer-overlay" hidden>
+    <div class="timer-card">
+      <div class="timer-time">0:00</div>
+      <div class="timer-label">Descanso</div>
+      <div class="timer-actions">
+        <button id="timer-minus">-15s</button>
+        <button id="timer-plus">+15s</button>
+        <button id="timer-pause">Pausar</button>
+        <button id="timer-close">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-view="home"><span class="ico">🏠</span>Hoje</button>
+    <button class="nav-btn" data-view="workouts"><span class="ico">📋</span>Treinos</button>
+    <button class="nav-btn" data-view="calendar"><span class="ico">📅</span>Calendário</button>
+    <button class="nav-btn" data-view="settings"><span class="ico">⚙️</span>Ajustes</button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
