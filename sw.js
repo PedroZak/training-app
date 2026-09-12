@@ -1,4 +1,4 @@
-const CACHE_NAME = 'meu-treino-v1';
+const CACHE_NAME = 'meu-treino-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -29,7 +29,7 @@ self.addEventListener('fetch', (event) => {
   if (url.origin !== location.origin) return;
 
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: 'no-store' })
       .then((res) => {
         const copy = res.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
