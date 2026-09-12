@@ -32,7 +32,7 @@
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); overflow-x: hidden; }
 body {
   padding-bottom: calc(64px + env(safe-area-inset-bottom));
   min-height: 100vh;
@@ -222,10 +222,12 @@ button { font-family: inherit; }
 .field-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
 .field-row label { font-size: 12px; color: var(--text-dim); font-weight: 600; }
 .field-row input, .field-row textarea, .field-row select {
+  width: 100%; min-width: 0; box-sizing: border-box;
   padding: 9px 10px; border-radius: 9px; border: 1.5px solid var(--border);
   background: var(--surface); color: var(--text); font-size: 14px; font-family: inherit;
 }
-.field-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.field-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.field-grid .field-row { min-width: 0; }
 .editor-ex-card { border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin-bottom: 10px; position: relative; }
 .editor-ex-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .icon-btn {
