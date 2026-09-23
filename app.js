@@ -109,7 +109,15 @@ function renderHome() {
 
   let cardioNote = '';
   if (sched.type === 'cardio') {
-    cardioNote = `<div class="card"><b>🏃 Dia de cardio</b><div class="ex-meta" style="margin-top:4px">${escapeHtml(CARDIO_INFO[info.mesoKey])}</div></div>`;
+    const done = isCardioDoneToday();
+    cardioNote = `
+      <div class="card">
+        <b>🏃 Dia de cardio</b>
+        <div class="ex-meta" style="margin-top:4px">${escapeHtml(CARDIO_INFO[info.mesoKey])}</div>
+        <button class="btn-primary" id="cardio-toggle-btn" style="margin-top:10px;${done ? 'opacity:0.6' : ''}">
+          ${done ? '✓ Cardio feito hoje' : 'Marcar cardio como feito'}
+        </button>
+      </div>`;
   }
 
   const header = `
@@ -137,6 +145,9 @@ function renderHome() {
 
   wrap.innerHTML = header + body;
   wireWorkoutCardEvents(wrap, true);
+
+  const cardioBtn = wrap.querySelector('#cardio-toggle-btn');
+  if (cardioBtn) cardioBtn.addEventListener('click', toggleCardioDone);
 
   wrap.querySelectorAll('[data-pick]').forEach((b) => {
     b.addEventListener('click', () => {
@@ -266,6 +277,29 @@ function finishWorkout() {
   state.today.checked = [];
   Store.save();
   showToast(`${state.workouts[wid].name} registrado! 💪`);
+  renderAll();
+}
+
+function isCardioDoneToday() {
+  return state.logs.some((l) => l.workoutId === 'CARDIO' && l.dateISO === state.today.date);
+}
+
+function toggleCardioDone() {
+  const existing = state.logs.find((l) => l.workoutId === 'CARDIO' && l.dateISO === state.today.date);
+  if (existing) {
+    state.logs = state.logs.filter((l) => l.id !== existing.id);
+    showToast('Cardio desmarcado.');
+  } else {
+    state.logs.push({
+      id: uid('log'),
+      workoutId: 'CARDIO',
+      dateISO: state.today.date,
+      completedAt: new Date().toISOString(),
+      exerciseIds: [],
+    });
+    showToast('Cardio registrado! 🏃');
+  }
+  Store.save();
   renderAll();
 }
 
@@ -535,7 +569,8 @@ function showDayDetail(iso) {
       const ex = w.exercises.find((x) => x.id === id);
       return ex ? `<div class="ex-mini">✓ ${escapeHtml(ex.name)}</div>` : '';
     }).join('') : '';
-    return `<div style="margin-top:8px"><b>${w ? escapeHtml(w.name) : log.workoutId}</b>${names}</div>`;
+    const label = w ? w.name : (CAL_LABELS[log.workoutId] || log.workoutId);
+    return `<div style="margin-top:8px"><b>${escapeHtml(label)}</b>${names}</div>`;
   }).join('');
 }
 
