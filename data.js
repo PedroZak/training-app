@@ -5,10 +5,14 @@
 // ---------------------------------------------------------------------------
 
 const MESO_INFO = {
-  M1: { label: 'Mesociclo 1 — Base', weeks: '1-4', series: '16-20 séries/grupo', pct: '65-75% 1RM' },
-  M2: { label: 'Mesociclo 2 — Força-Hipertrofia', weeks: '5-8', series: '12-16 séries/grupo', pct: '75-85% 1RM' },
-  M3: { label: 'Mesociclo 3 — Força Máxima', weeks: '9-12', series: '10-14 séries/grupo', pct: '85-95% 1RM' },
+  M1: { label: 'Mesociclo 1 — Base', weeks: '1-4', series: '16-20 séries/grupo', pct: '65-75% 1RM', seriesMin: 16, seriesMax: 20 },
+  M2: { label: 'Mesociclo 2 — Força-Hipertrofia', weeks: '5-8', series: '12-16 séries/grupo', pct: '75-85% 1RM', seriesMin: 12, seriesMax: 16 },
+  M3: { label: 'Mesociclo 3 — Força Máxima', weeks: '9-12', series: '10-14 séries/grupo', pct: '85-95% 1RM', seriesMin: 10, seriesMax: 14 },
 };
+
+// Cor fixa por fase do ciclo (linguagem de cor consistente, tipo zonas do Garmin/Oura)
+const MESO_COLORS = { M1: '#2DD4BF', M2: '#FB923C', M3: '#F43F5E' };
+const DELOAD_COLOR = '#F5B83D';
 
 const CARDIO_INFO = {
   M1: '25-30min · Zona 3 (130-145bpm)',
@@ -35,7 +39,7 @@ const WORKOUT_META = {
 };
 
 function ex(name, grip, sets, m1, m2, m3, rest, notes, isNew) {
-  return { name, grip, sets, reps: { M1: m1, M2: m2, M3: m3 }, rest, notes, isNew: !!isNew, weight: '', weightUpdatedAt: null };
+  return { name, grip, sets, reps: { M1: m1, M2: m2, M3: m3 }, rest, notes, isNew: !!isNew, weight: '', weightUpdatedAt: null, bestWeight: null };
 }
 
 // id é gerado na primeira carga (seedIfEmpty) para garantir estabilidade.
@@ -139,10 +143,19 @@ const Store = {
   },
 
   _migrate() {
-    // espaço para migrações futuras de schema
     if (!this.data.settings) this.data.settings = { cycleStartDate: todayISO(), mesoOverride: null };
     if (!this.data.today) this.data.today = { date: todayISO(), workoutId: null, checked: [] };
     if (!this.data.logs) this.data.logs = [];
+    for (const id of ['A', 'B', 'C', 'D']) {
+      const w = this.data.workouts[id];
+      if (!w) continue;
+      for (const e of w.exercises) {
+        if (e.bestWeight === undefined) {
+          const n = parseFloat(String(e.weight).replace(',', '.'));
+          e.bestWeight = Number.isFinite(n) ? n : null;
+        }
+      }
+    }
   },
 
   save() {

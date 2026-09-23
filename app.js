@@ -102,10 +102,12 @@ function renderHome() {
   const wkButtons = WORKOUT_IDS.map((id) => {
     const w = state.workouts[id];
     const active = state.today.workoutId === id;
-    return `<button class="wk-btn ${active ? 'active' : ''}" data-pick="${id}">
+    return `<button class="wk-btn ${active ? 'active' : ''}" style="--wk-color:${w.color}" data-pick="${id}">
       ${id}<span class="wk-last">${daysAgoLabel(w.lastPerformedAt)}</span>
     </button>`;
   }).join('');
+
+  const mesoColor = info.isDeload ? DELOAD_COLOR : MESO_COLORS[info.mesoKey];
 
   let cardioNote = '';
   if (sched.type === 'cardio') {
@@ -121,12 +123,12 @@ function renderHome() {
   }
 
   const header = `
-    <div class="card meso-banner">
+    <div class="card meso-banner" style="--meso-color:${mesoColor}">
       <div>
         <div class="meso-title">${escapeHtml(info.meso.label)}</div>
         <div class="meso-detail">Semana ${info.weekNum}/12 · ${info.meso.series} · ${info.meso.pct}</div>
       </div>
-      ${info.isDeload ? '<span class="pill deload">Deload · -40% volume</span>' : `<span class="pill">${info.mesoKey}</span>`}
+      <span class="pill" style="background:${mesoColor}29;color:${mesoColor}">${info.isDeload ? 'Deload · -40%' : info.mesoKey}</span>
     </div>
     <div class="card">
       <div class="ex-meta">${WEEKDAY_NAMES[dow]} · agenda: ${sched.type === 'workout' ? 'Treino ' + sched.id : sched.label}</div>
@@ -165,7 +167,6 @@ function renderHome() {
 function renderWorkoutCard(workout, mesoKey, interactive) {
   const total = workout.exercises.length;
   const doneCount = interactive ? workout.exercises.filter((e) => state.today.checked.includes(e.id)).length : 0;
-  const pct = total ? Math.round((doneCount / total) * 100) : 0;
 
   const rows = workout.exercises.map((e) => renderExerciseRow(e, mesoKey, interactive)).join('');
 
@@ -173,14 +174,35 @@ function renderWorkoutCard(workout, mesoKey, interactive) {
     ? `<div class="finish-bar"><button class="btn-primary" id="finish-btn" ${doneCount === 0 ? 'disabled' : ''}>Concluir treino (${doneCount}/${total})</button></div>`
     : '';
 
+  let seriesRing = '';
+  if (interactive) {
+    const seriesDone = workout.exercises.filter((e) => state.today.checked.includes(e.id)).reduce((sum, e) => sum + (Number(e.sets) || 0), 0);
+    const { seriesMin, seriesMax } = MESO_INFO[mesoKey];
+    const pct = Math.max(0, Math.min(1, seriesDone / seriesMax));
+    const circumference = 138.2;
+    const offset = circumference * (1 - pct);
+    const ringColor = seriesDone >= seriesMin ? 'var(--success)' : 'var(--wk-color)';
+    seriesRing = `
+      <div class="series-ring-row">
+        <svg class="series-ring" viewBox="0 0 56 56">
+          <circle class="series-ring-track" cx="28" cy="28" r="22"></circle>
+          <circle class="series-ring-fill" cx="28" cy="28" r="22" style="stroke:${ringColor};stroke-dashoffset:${offset}"></circle>
+        </svg>
+        <div class="series-ring-info">
+          <div class="value tnum">${seriesDone} séries</div>
+          <div class="target">meta do ${mesoKey}: ${seriesMin}-${seriesMax}/grupo</div>
+        </div>
+      </div>`;
+  }
+
   return `
-    <div class="card">
+    <div class="card" style="--wk-color:${workout.color}">
       <div class="workout-title-row">
         <span class="workout-dot" style="background:${workout.color}"></span>
         <div><h2>${escapeHtml(workout.name)}</h2><div class="sub">${escapeHtml(workout.subtitle)}</div></div>
       </div>
       <div class="workout-last">Último: ${daysAgoLabel(workout.lastPerformedAt)}${workout.lastPerformedAt ? ' · ' + formatDatePt(workout.lastPerformedAt) : ''}</div>
-      ${interactive ? `<div class="progress-bar-track"><div class="progress-bar-fill" style="width:${pct}%"></div></div>` : ''}
+      ${seriesRing}
       ${workout.warmup ? `<div class="warmup-note">Aquecimento: ${escapeHtml(workout.warmup)}</div>` : ''}
       <div class="exercise-list" data-workout="${workout.id}">${rows}</div>
     </div>
@@ -191,19 +213,23 @@ function renderWorkoutCard(workout, mesoKey, interactive) {
 function renderExerciseRow(e, mesoKey, interactive) {
   const done = interactive && state.today.checked.includes(e.id);
   const target = e.reps[mesoKey];
+  const numericWeight = parseFloat(String(e.weight).replace(',', '.'));
+  const isPR = interactive && e.bestWeight != null && Number.isFinite(numericWeight) && numericWeight === e.bestWeight && e.bestWeight > 0;
   return `
     <div class="exercise-row ${done ? 'done' : ''}" data-ex="${e.id}">
       ${interactive ? `<button class="ex-check" data-check="${e.id}">${done ? '✓' : ''}</button>` : '<span style="width:28px"></span>'}
       <div class="ex-body">
-        <div class="ex-name">${escapeHtml(e.name)}${e.isNew ? '<span class="ex-new-badge">NOVO</span>' : ''}</div>
+        <div class="ex-name">${escapeHtml(e.name)}${e.isNew ? '<span class="ex-new-badge">NOVO</span>' : ''}${isPR ? '<span class="pr-badge">🏆 PR</span>' : ''}</div>
         <div class="ex-meta">${escapeHtml(e.grip)} · ${e.sets}x</div>
-        <div class="ex-target">${escapeHtml(target)} reps <span class="rest-tag">· descanso ${escapeHtml(e.rest)}</span></div>
+        <div class="ex-target tnum">${escapeHtml(target)} reps <span class="rest-tag">· descanso ${escapeHtml(e.rest)}</span></div>
         ${e.notes ? `<div class="ex-notes">${escapeHtml(e.notes)}</div>` : ''}
         ${interactive ? `
         <div class="ex-controls">
           <div class="weight-field">
-            <input type="number" inputmode="decimal" step="0.5" placeholder="0" value="${e.weight || ''}" data-weight="${e.id}">
+            <button type="button" data-weight-step="-2.5" data-weight="${e.id}">−</button>
+            <input type="number" inputmode="decimal" step="0.5" placeholder="0" value="${e.weight || ''}" class="tnum" data-weight-input="${e.id}">
             <span>kg</span>
+            <button type="button" data-weight-step="2.5" data-weight="${e.id}">+</button>
           </div>
           ${e.weightUpdatedAt ? `<span class="weight-updated">atualizado ${daysAgoLabel(e.weightUpdatedAt)}</span>` : ''}
           <button class="rest-btn" data-rest="${e.id}">⏱ ${e.restSec}s</button>
@@ -218,8 +244,16 @@ function wireWorkoutCardEvents(root, interactive) {
   root.querySelectorAll('[data-check]').forEach((btn) => {
     btn.addEventListener('click', () => toggleCheck(btn.dataset.check));
   });
-  root.querySelectorAll('[data-weight]').forEach((inp) => {
-    inp.addEventListener('change', () => saveWeight(inp.dataset.weight, inp.value));
+  root.querySelectorAll('[data-weight-input]').forEach((inp) => {
+    inp.addEventListener('change', () => saveWeight(inp.dataset.weightInput, inp.value));
+  });
+  root.querySelectorAll('[data-weight-step]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const ex = findExerciseById(btn.dataset.weight);
+      const current = parseFloat(String(ex.weight).replace(',', '.')) || 0;
+      const next = Math.max(0, current + parseFloat(btn.dataset.weightStep));
+      saveWeight(ex.id, String(next));
+    });
   });
   root.querySelectorAll('[data-rest]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -258,6 +292,15 @@ function saveWeight(exId, value) {
   if (!ex) return;
   ex.weight = value;
   ex.weightUpdatedAt = todayISO();
+  const numeric = parseFloat(String(value).replace(',', '.'));
+  if (Number.isFinite(numeric) && numeric > 0) {
+    if (ex.bestWeight == null) {
+      ex.bestWeight = numeric;
+    } else if (numeric > ex.bestWeight) {
+      ex.bestWeight = numeric;
+      showToast(`🏆 Novo recorde em ${ex.name}: ${numeric}kg!`);
+    }
+  }
   Store.save();
   renderHome();
 }
@@ -329,6 +372,8 @@ function tickTimerDisplay() {
   renderTimer();
 }
 
+const TIMER_RING_CIRCUMFERENCE = 175.93;
+
 function renderTimer() {
   const overlay = document.getElementById('timer-overlay');
   if (overlay.hidden) return;
@@ -336,6 +381,8 @@ function renderTimer() {
   const s = Timer.remaining % 60;
   overlay.querySelector('.timer-time').textContent = `${m}:${String(s).padStart(2, '0')}`;
   overlay.querySelector('.timer-label').textContent = 'Descanso · ' + Timer.label;
+  const pct = Timer.total > 0 ? Timer.remaining / Timer.total : 0;
+  document.getElementById('timer-ring-fill').style.strokeDashoffset = TIMER_RING_CIRCUMFERENCE * (1 - pct);
 }
 
 function wireTimerControls() {
@@ -370,9 +417,9 @@ function beep() {
 // ---------------------------------------------------------------------------
 function renderWorkoutsTab() {
   const wrap = document.getElementById('workouts-view');
-  const tabs = WORKOUT_IDS.map((id) => `<button class="tab-btn ${editorWorkoutId === id ? 'active' : ''}" data-tab="${id}">${id}</button>`).join('');
-
   if (!editorWorkoutId) editorWorkoutId = 'A';
+  const tabs = WORKOUT_IDS.map((id) => `<button class="tab-btn ${editorWorkoutId === id ? 'active' : ''}" style="--tab-color:${state.workouts[id].color}" data-tab="${id}">${id}</button>`).join('');
+
   const w = state.workouts[editorWorkoutId];
   const info = currentWeekInfo(state.settings);
 
