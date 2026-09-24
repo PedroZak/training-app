@@ -128,7 +128,8 @@ def load_decisions(cat):
     f = OUT / "decisions.json"
     dec = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
     ids = {e["id"] for e in cat}
-    bad = {k: v for k, v in dec.items() if v not in ids}
+    bad = {k: v for k, v in dec.items() if isinstance(v, str) and v not in ids}
+    bad |= {k: c for k, v in dec.items() if isinstance(v, dict) for c in v.get("candidatos", []) if c not in ids}
     if bad:
         sys.exit(f"decisions.json aponta para ids inexistentes: {bad}")
     return dec
@@ -146,6 +147,9 @@ def main():
         s0, txt0, e0 = top[0]
         alts = "; ".join(f"{t[2]['id']} ({t[0]:.2f})" for t in top[1:])
         decided = decisions.get(name)
+        if isinstance(decided, dict):  # regra definida, id ainda não escolhido: continua pendente
+            note += f" | REGRA SUA: {decided['regra']} (histórico fica no slot atual); ESCOLHER ID: " + " ou ".join(decided["candidatos"])
+            decided = None
         if decided:
             auto = e0["id"] if status != "sem_match" else "(sem match)"
             note += "" if auto == decided else f" | AUTO sugeria {auto}, você decidiu {decided}"
@@ -155,6 +159,8 @@ def main():
             "sugestao_id": e0["id"] if status not in ("sem_match",) else "",
             "sugestao_name_pt": e0["name_pt"] if status not in ("sem_match",) else "",
             "melhor_candidato_id": e0["id"], "score": f"{s0:.2f}",
+            "no_celular": "sim" if any(o.startswith("backup") for o in names[name]) else "nao",
+            "no_seed": "sim" if "seed" in names[name] else "nao",
             "confianca": conf, "status": status, "custom_no_catalogo": "sim" if e0["custom"] else "",
             "tem_midia": "sim" if e0["media"] else "nao",
             "alternativas": alts, "observacao": note, "decisao": decided or "",
@@ -171,6 +177,10 @@ def main():
     dump("ambiguos.csv", [r for r in rows if r["status"] == "ambiguo"])
     dump("sem-match.csv", [r for r in rows if r["status"] == "sem_match"])
     dump("pendentes.csv", [r for r in rows if r["status"] in ("ambiguo", "sem_match")])
+    dump("casaram-sozinhos.csv", [r for r in rows if r["status"] == "sugerido"])
+    dump("decisoes-suas.csv", [r for r in rows if r["status"] == "confirmado"])
+    dump("novos-no-celular.csv", [r for r in rows if r["no_celular"] == "sim" and r["no_seed"] == "nao"])
+    dump("so-no-seed.csv", [r for r in rows if r["no_celular"] == "nao" and r["no_seed"] == "sim"])
     from collections import Counter
     print(f"{len(rows)} nomes | ", dict(Counter((r['status'], r['confianca']) for r in rows)))
     for r in rows:
