@@ -30,8 +30,10 @@ function boot() {
   wireNav();
   wireSettingsView();
   wireExportView();
+  wireMigration();
   renderAll();
   setInterval(tickTimerDisplay, 1000);
+  initCatalog();
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -219,7 +221,7 @@ function renderExerciseRow(e, mesoKey, interactive) {
     <div class="exercise-row ${done ? 'done' : ''}" data-ex="${e.id}">
       ${interactive ? `<button class="ex-check" data-check="${e.id}">${done ? '✓' : ''}</button>` : '<span style="width:28px"></span>'}
       <div class="ex-body">
-        <div class="ex-name">${escapeHtml(e.name)}${e.isNew ? '<span class="ex-new-badge">NOVO</span>' : ''}${isPR ? '<span class="pr-badge">🏆 PR</span>' : ''}</div>
+        <div class="ex-name">${escapeHtml(Catalog.name(e))}${e.isNew ? '<span class="ex-new-badge">NOVO</span>' : ''}${isPR ? '<span class="pr-badge">🏆 PR</span>' : ''}</div>
         <div class="ex-meta">${escapeHtml(e.grip)} · ${e.sets}x</div>
         <div class="ex-target tnum">${escapeHtml(target)} reps <span class="rest-tag">· descanso ${escapeHtml(e.rest)}</span></div>
         ${e.notes ? `<div class="ex-notes">${escapeHtml(e.notes)}</div>` : ''}
@@ -259,7 +261,7 @@ function wireWorkoutCardEvents(root, interactive) {
     btn.addEventListener('click', () => {
       const exId = btn.dataset.rest;
       const ex = findExerciseById(exId);
-      startTimer(ex.restSec, ex.name);
+      startTimer(ex.restSec, Catalog.name(ex));
     });
   });
   const finishBtn = root.querySelector('#finish-btn');
@@ -283,7 +285,7 @@ function toggleCheck(exId) {
   renderHome();
   if (willCheck) {
     const ex = findExerciseById(exId);
-    if (ex && ex.restSec) startTimer(ex.restSec, ex.name);
+    if (ex && ex.restSec) startTimer(ex.restSec, Catalog.name(ex));
   }
 }
 
@@ -298,7 +300,7 @@ function saveWeight(exId, value) {
       ex.bestWeight = numeric;
     } else if (numeric > ex.bestWeight) {
       ex.bestWeight = numeric;
-      showToast(`🏆 Novo recorde em ${ex.name}: ${numeric}kg!`);
+      showToast(`🏆 Novo recorde em ${Catalog.name(ex)}: ${numeric}kg!`);
     }
   }
   Store.save();
@@ -467,7 +469,7 @@ function renderEditorExercise(e, index, total) {
           <button class="icon-btn btn-danger" data-del>✕</button>
         </div>
       </div>
-      <div class="field-row"><label>Nome</label><input type="text" data-f="name" value="${escapeHtml(e.name)}"></div>
+      <div class="field-row"><label>Nome${e.exerciseId ? ' (do catálogo · ' + escapeHtml(e.exerciseId) + ')' : ''}</label><input type="text" data-f="name" value="${escapeHtml(Catalog.name(e))}" ${e.exerciseId && Catalog.get(e.exerciseId) ? 'disabled' : ''}></div>
       <div class="field-grid">
         <div class="field-row"><label>Pegada</label><input type="text" data-f="grip" value="${escapeHtml(e.grip)}"></div>
         <div class="field-row"><label>Séries</label><input type="number" data-f="sets" value="${e.sets}"></div>
@@ -508,7 +510,7 @@ function wireEditorEvents(w) {
     });
 
     card.querySelector('[data-del]').addEventListener('click', () => {
-      if (!confirm(`Remover "${ex.name}" do treino?`)) return;
+      if (!confirm(`Remover "${Catalog.name(ex)}" do treino?`)) return;
       w.exercises = w.exercises.filter((x) => x.id !== exId);
       Store.save();
       renderWorkoutsTab();
@@ -614,7 +616,7 @@ function showDayDetail(iso) {
     const w = state.workouts[log.workoutId];
     const names = w ? log.exerciseIds.map((id) => {
       const ex = w.exercises.find((x) => x.id === id);
-      return ex ? `<div class="ex-mini">✓ ${escapeHtml(ex.name)}</div>` : '';
+      return ex ? `<div class="ex-mini">✓ ${escapeHtml(Catalog.name(ex))}</div>` : '';
     }).join('') : '';
     const label = w ? w.name : (CAL_LABELS[log.workoutId] || log.workoutId);
     return `<div style="margin-top:8px"><b>${escapeHtml(label)}</b>${names}</div>`;
@@ -630,6 +632,7 @@ function renderSettings() {
     `Semana ${info.weekNum}/12 · ${info.mesoKey}${info.isDeload ? ' (deload)' : ''}`;
   document.getElementById('cycle-start-input').value = state.settings.cycleStartDate;
   document.getElementById('meso-override-select').value = state.settings.mesoOverride || 'auto';
+  renderCatalogStatus();
 }
 
 function wireSettingsView() {
@@ -670,11 +673,11 @@ function downloadFile(filename, content, mime) {
 }
 
 function exportWeightsCSV() {
-  const rows = [['Treino', 'Exercicio', 'Peso (kg)', 'Atualizado em']];
+  const rows = [['Treino', 'Exercicio', 'Peso (kg)', 'Atualizado em', 'ID do catalogo']];
   for (const id of WORKOUT_IDS) {
     const w = state.workouts[id];
     for (const e of w.exercises) {
-      rows.push([w.name, e.name, e.weight || '', e.weightUpdatedAt ? formatDatePt(e.weightUpdatedAt) : '']);
+      rows.push([w.name, Catalog.name(e), e.weight || '', e.weightUpdatedAt ? formatDatePt(e.weightUpdatedAt) : '', e.exerciseId || '']);
     }
   }
   const csv = '﻿' + rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(';')).join('\r\n');
@@ -698,6 +701,7 @@ function importBackupJSON(file) {
       editorWorkoutId = 'A';
       renderAll();
       showToast('Backup importado!');
+      maybeOfferMigration();
     } catch (e) {
       alert('Não foi possível importar esse arquivo: ' + e.message);
     }
@@ -711,6 +715,82 @@ function wireExportView() {
   document.getElementById('import-json-input').addEventListener('change', (e) => {
     if (e.target.files[0]) importBackupJSON(e.target.files[0]);
     e.target.value = '';
+  });
+}
+
+// ---------------------------------------------------------------------------
+// CATÁLOGO: carregamento, migração (com backup obrigatório) e armazenamento persistente
+// ---------------------------------------------------------------------------
+let storagePersisted = null;
+
+async function initCatalog() {
+  try {
+    if (navigator.storage && navigator.storage.persist) {
+      storagePersisted = (await navigator.storage.persisted()) || (await navigator.storage.persist());
+    }
+  } catch (e) { storagePersisted = null; }
+  await Catalog.load();
+  renderAll();
+  maybeOfferMigration();
+}
+
+function linkedCount() {
+  return Object.values(state.workouts).flatMap((w) => w.exercises).filter((e) => e.exerciseId).length;
+}
+
+function renderCatalogStatus() {
+  const total = Object.values(state.workouts).flatMap((w) => w.exercises).length;
+  document.getElementById('catalog-status').textContent = Catalog.ready
+    ? `${linkedCount()} de ${total} exercícios vinculados ao catálogo (${Object.keys(Catalog.byId).length} disponíveis).`
+    : 'Catálogo indisponível agora (sem conexão); usando os nomes salvos.';
+  document.getElementById('persist-status').textContent = storagePersisted === null
+    ? 'Armazenamento protegido: não suportado neste navegador.'
+    : `Armazenamento protegido contra limpeza automática: ${storagePersisted ? 'sim' : 'não'}.`;
+  document.getElementById('undo-migration-btn').hidden = linkedCount() === 0;
+}
+
+function maybeOfferMigration() {
+  if (!Catalog.ready || state.settings.catalogOptOut) return;
+  const { pending } = Catalog.plan(state);
+  if (pending.length === 0) return;
+  document.getElementById('migrate-count').textContent = pending.length;
+  document.getElementById('migrate-modal').hidden = false;
+}
+
+function runMigration() {
+  // 1) cópia de segurança no próprio navegador (falhou? não migra)
+  try {
+    localStorage.setItem(CATALOG_SNAPSHOT_KEY, localStorage.getItem(STORAGE_KEY) || '');
+  } catch (e) {
+    alert('Não foi possível criar a cópia de segurança; nada foi alterado.');
+    return;
+  }
+  // 2) backup em arquivo, antes de qualquer alteração
+  exportBackupJSON();
+  // 3) vínculo por id (aborta sozinho se qualquer outro dado mudar)
+  try {
+    const rep = Catalog.apply(state);
+    Store.save();
+    showToast(`${rep.linked} exercícios vinculados ao catálogo.`);
+  } catch (e) {
+    alert('Migração cancelada: ' + e.message);
+  }
+  document.getElementById('migrate-modal').hidden = true;
+  renderAll();
+}
+
+function wireMigration() {
+  document.getElementById('migrate-go').addEventListener('click', runMigration);
+  document.getElementById('migrate-later').addEventListener('click', () => {
+    document.getElementById('migrate-modal').hidden = true;
+  });
+  document.getElementById('undo-migration-btn').addEventListener('click', () => {
+    if (!confirm('Remover só o vínculo com o catálogo? Nomes antigos, pesos e histórico continuam como estão.')) return;
+    const n = Catalog.revert(state);
+    state.settings.catalogOptOut = true;
+    Store.save();
+    renderAll();
+    showToast(`Vínculo removido de ${n} exercícios.`);
   });
 }
 

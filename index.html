@@ -59,6 +59,13 @@
       </div>
 
       <div class="card">
+        <h2 style="margin-bottom:6px">Catálogo de exercícios</h2>
+        <p class="ex-meta" id="catalog-status" style="margin-bottom:8px"></p>
+        <p class="ex-meta" id="persist-status" style="margin-bottom:8px"></p>
+        <button class="btn-secondary" id="undo-migration-btn" style="width:100%" hidden>Desfazer vínculo com o catálogo</button>
+      </div>
+
+      <div class="card">
         <h2 style="margin-bottom:10px">Zona de risco</h2>
         <button class="btn-secondary btn-danger" id="reset-data-btn" style="width:100%">Apagar todos os dados</button>
       </div>
@@ -91,9 +98,20 @@
     <button class="nav-btn" data-view="settings"><span class="ico">⚙️</span>Ajustes</button>
   </nav>
 
+  <div class="modal" id="migrate-modal" hidden>
+    <div class="modal-card">
+      <h2>Atualização dos exercícios</h2>
+      <p>Vamos padronizar <b id="migrate-count">0</b> exercícios com nomes em português, usando o catálogo.</p>
+      <p class="ex-meta">Seus pesos, recordes e histórico <b>não mudam</b>: só é acrescentado um vínculo com o catálogo. Antes disso, o app baixa um backup do seu treino.</p>
+      <button class="btn-primary" id="migrate-go">Baixar backup e atualizar</button>
+      <button class="btn-secondary" id="migrate-later" style="width:100%;margin-top:8px">Agora não</button>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="data.js"></script>
+  <script src="catalog.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,10 +1,13 @@
-const CACHE_NAME = 'meu-treino-v3';
+const CACHE_NAME = 'meu-treino-v4';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './data.js',
   './app.js',
+  './catalog.js',
+  './exercises.json',
+  './exercise-map.json',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
