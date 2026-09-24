@@ -1,4 +1,4 @@
-const CACHE_NAME = 'meu-treino-v5';
+const CACHE_NAME = 'meu-treino-v6';
 // Mídias do catálogo: cache próprio, cache-first, preenchido só quando abertas (sem precache).
 // Sobrevive às trocas de versão do app; se um arquivo de media/ for regenerado, suba este nome.
 const MEDIA_CACHE = 'meu-treino-media-v1';

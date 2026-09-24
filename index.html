@@ -108,6 +108,37 @@
     </div>
   </div>
 
+  <div class="picker" id="picker" hidden>
+    <div class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="picker-title">
+      <div class="picker-view" id="picker-list-view">
+        <div class="picker-head">
+          <h2 id="picker-title">Adicionar exercício</h2>
+          <button type="button" class="icon-btn" id="picker-close" aria-label="Fechar">✕</button>
+        </div>
+        <input type="search" id="picker-q" class="picker-search" placeholder="Buscar: puxada, voador, rdl…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Buscar exercício">
+        <div class="picker-filters">
+          <select id="picker-muscle" aria-label="Filtrar por músculo"></select>
+          <select id="picker-equip" aria-label="Filtrar por equipamento"></select>
+        </div>
+        <div class="picker-count" id="picker-count"></div>
+        <div class="picker-list" id="picker-list"></div>
+        <button type="button" class="btn-secondary picker-custom-btn" id="picker-custom">＋ Criar exercício personalizado</button>
+      </div>
+      <div class="picker-view" id="picker-form-view" hidden>
+        <div class="picker-head">
+          <h2>Exercício personalizado</h2>
+          <button type="button" class="icon-btn" id="picker-form-close" aria-label="Fechar">✕</button>
+        </div>
+        <div class="field-row"><label for="custom-name">Nome (em português)</label><input type="text" id="custom-name" autocomplete="off" maxlength="60"></div>
+        <div class="field-row"><label for="custom-muscle">Grupo muscular</label><select id="custom-muscle"></select></div>
+        <div class="field-row"><label for="custom-equip">Equipamento</label><select id="custom-equip"></select></div>
+        <p class="ex-meta" style="margin-bottom:12px">Fica salvo neste aparelho, entra no backup e não tem foto (você pode adicionar depois pelo catálogo).</p>
+        <button type="button" class="btn-primary" id="custom-save">Criar e adicionar ao treino</button>
+        <button type="button" class="btn-secondary" id="custom-back" style="width:100%;margin-top:8px">Voltar à lista</button>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="data.js"></script>

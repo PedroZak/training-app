@@ -139,6 +139,7 @@ const Store = {
       workouts,
       today: { date: todayISO(), workoutId: null, checked: [] },
       logs: [], // { id, workoutId, dateISO, completedAt, exerciseIds: [] }
+      customExercises: [], // exercícios criados no seletor (id 'custom-…'); ficam no estado => entram no backup/restore
     };
   },
 
@@ -146,6 +147,7 @@ const Store = {
     if (!this.data.settings) this.data.settings = { cycleStartDate: todayISO(), mesoOverride: null };
     if (!this.data.today) this.data.today = { date: todayISO(), workoutId: null, checked: [] };
     if (!this.data.logs) this.data.logs = [];
+    if (!Array.isArray(this.data.customExercises)) this.data.customExercises = [];
     for (const id of ['A', 'B', 'C', 'D']) {
       const w = this.data.workouts[id];
       if (!w) continue;

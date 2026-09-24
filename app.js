@@ -15,6 +15,7 @@ let calSelectedDate = null;
 function boot() {
   Store.load();
   state = Store.data;
+  Catalog.setCustom(state.customExercises);
 
   // vira o dia: se a data salva em "today" é de ontem, reseta o checklist
   if (state.today.date !== todayISO()) {
@@ -32,6 +33,7 @@ function boot() {
   wireExportView();
   wireMigration();
   wireMediaFallback();
+  wirePicker();
   renderAll();
   setInterval(tickTimerDisplay, 1000);
   initCatalog();
@@ -479,7 +481,7 @@ function renderEditorExercise(e, index, total) {
           <button class="icon-btn btn-danger" data-del>✕</button>
         </div>
       </div>
-      <div class="field-row"><label>Nome${e.exerciseId ? ' (do catálogo · ' + escapeHtml(e.exerciseId) + ')' : ''}</label><input type="text" data-f="name" value="${escapeHtml(Catalog.name(e))}" ${e.exerciseId && Catalog.get(e.exerciseId) ? 'disabled' : ''}></div>
+      <div class="field-row"><label>Nome${e.exerciseId ? (String(e.exerciseId).startsWith('custom-') ? ' (personalizado)' : ' (do catálogo · ' + escapeHtml(e.exerciseId) + ')') : ''}</label><input type="text" data-f="name" value="${escapeHtml(Catalog.name(e))}" ${e.exerciseId && Catalog.get(e.exerciseId) && !Catalog.get(e.exerciseId).custom ? 'disabled' : ''}></div>
       <div class="field-grid">
         <div class="field-row"><label>Pegada</label><input type="text" data-f="grip" value="${escapeHtml(e.grip)}"></div>
         <div class="field-row"><label>Séries</label><input type="number" data-f="sets" value="${e.sets}"></div>
@@ -513,6 +515,11 @@ function wireEditorEvents(w) {
         else if (field === 'sets') ex.sets = Number(input.value) || 1;
         else if (field === 'rest') { ex.rest = input.value; ex.restSec = parseRestSeconds(input.value); }
         else if (field.startsWith('reps')) ex.reps[field.replace('reps', '')] = input.value;
+        else if (field === 'name' && String(ex.exerciseId || '').startsWith('custom-') && Catalog.get(ex.exerciseId)) {
+          Catalog.get(ex.exerciseId).name_pt = input.value.trim() || ex.name;
+          Catalog.setCustom(state.customExercises);
+          ex.name = Catalog.get(ex.exerciseId).name_pt;
+        }
         else ex[field] = input.value;
         Store.save();
         renderAll();
@@ -541,16 +548,7 @@ function wireEditorEvents(w) {
     });
   });
 
-  document.getElementById('add-ex-btn').addEventListener('click', () => {
-    w.exercises.push({
-      id: uid('ex'), name: 'Novo exercício', grip: '—', sets: 3,
-      reps: { M1: '10-12', M2: '10-12', M3: '8-10' }, rest: '60s', restSec: 60,
-      notes: '', isNew: true, weight: '', weightUpdatedAt: null,
-    });
-    Store.save();
-    renderWorkoutsTab();
-    renderHome();
-  });
+  document.getElementById('add-ex-btn').addEventListener('click', () => openPicker(w.id));
 }
 
 // ---------------------------------------------------------------------------
@@ -660,6 +658,7 @@ function wireSettingsView() {
     if (!confirm('Isso vai apagar todos os pesos, histórico e edições e voltar ao padrão. Tem certeza?')) return;
     Store.reset();
     state = Store.data;
+    Catalog.setCustom(state.customExercises);
     editorWorkoutId = 'A';
     renderAll();
     showToast('Dados resetados.');
@@ -708,6 +707,7 @@ function importBackupJSON(file) {
       if (!parsed.workouts) throw new Error('formato inválido');
       Store.replaceAll(parsed);
       state = Store.data;
+      Catalog.setCustom(state.customExercises);
       editorWorkoutId = 'A';
       renderAll();
       showToast('Backup importado!');
@@ -783,6 +783,150 @@ function wireMediaFallback() {
 }
 
 // ---------------------------------------------------------------------------
+// SELETOR DE EXERCÍCIOS (tela de treinos > adicionar exercício)
+// ---------------------------------------------------------------------------
+let pickerWid = null;
+let pickerTimer = null;
+
+// Quanto cada exercício do catálogo já foi usado: aparece em treinos + em registros do calendário.
+function usageCounts() {
+  const all = Object.values(state.workouts).flatMap((w) => w.exercises);
+  const u = {};
+  for (const e of all) if (e.exerciseId) u[e.exerciseId] = (u[e.exerciseId] || 0) + 1;
+  const local = Object.fromEntries(all.map((e) => [e.id, e]));
+  for (const l of state.logs) {
+    for (const id of l.exerciseIds) {
+      const e = local[id];
+      if (e && e.exerciseId) u[e.exerciseId] = (u[e.exerciseId] || 0) + 1;
+    }
+  }
+  return u;
+}
+
+function fillSelect(sel, values, allLabel) {
+  sel.innerHTML = (allLabel ? `<option value="">${allLabel}</option>` : '') +
+    values.map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
+}
+
+function openPicker(wid) {
+  pickerWid = wid;
+  fillSelect(document.getElementById('picker-muscle'), Catalog.muscles(), 'Todos os músculos');
+  fillSelect(document.getElementById('picker-equip'), Catalog.equipments(), 'Todo equipamento');
+  document.getElementById('picker-q').value = '';
+  document.getElementById('picker-list-view').hidden = false;
+  document.getElementById('picker-form-view').hidden = true;
+  document.getElementById('picker').hidden = false;
+  renderPickerList();
+  document.getElementById('picker-q').focus();
+}
+
+function closePicker() {
+  document.getElementById('picker').hidden = true;
+  pickerWid = null;
+  document.getElementById('add-ex-btn')?.focus();
+}
+
+function renderPickerList() {
+  const q = document.getElementById('picker-q').value;
+  const muscle = document.getElementById('picker-muscle').value;
+  const equipment = document.getElementById('picker-equip').value;
+  const list = document.getElementById('picker-list');
+  const count = document.getElementById('picker-count');
+  if (!Catalog.ready && Catalog.all().length === 0) {
+    count.textContent = '';
+    list.innerHTML = '<div class="picker-empty">Catálogo indisponível agora (sem conexão). Você ainda pode criar um exercício personalizado abaixo.</div>';
+    return;
+  }
+  const results = Catalog.search({ q, muscle, equipment, usage: usageCounts() });
+  const inWorkout = new Set(state.workouts[pickerWid].exercises.map((e) => e.exerciseId).filter(Boolean));
+  const filtered = q.trim() || muscle || equipment;
+  count.textContent = `${results.length} exercício${results.length === 1 ? '' : 's'}${filtered ? '' : ' · os que você mais usa vêm primeiro'}`;
+  if (results.length === 0) {
+    list.innerHTML = `<div class="picker-empty">Nada encontrado${q.trim() ? ' para “' + escapeHtml(q.trim()) + '”' : ''}.` +
+      `<br><button type="button" class="btn-secondary" data-create-from-query>＋ Criar “${escapeHtml(q.trim() || 'novo exercício')}”</button></div>`;
+    return;
+  }
+  list.innerHTML = results.map((ex) => `
+    <button type="button" class="picker-item" data-pick-ex="${escapeHtml(ex.id)}">
+      ${ex.thumb ? `<img class="picker-thumb" src="${escapeHtml(ex.thumb)}" alt="" loading="lazy" decoding="async">` : '<span class="picker-thumb" aria-hidden="true">🏋️</span>'}
+      <span class="picker-body">
+        <span class="picker-name">${escapeHtml(ex.name_pt)}${inWorkout.has(ex.id) ? '<span class="picker-tag in">no treino</span>' : ''}${ex.custom ? '<span class="picker-tag cus">personalizado</span>' : ''}</span>
+        <span class="picker-meta" style="display:block">${escapeHtml(ex.muscle_primary || '')} · ${escapeHtml(ex.equipment || '')}</span>
+      </span>
+    </button>`).join('');
+}
+
+function pickExercise(catalogId) {
+  const cat = Catalog.get(catalogId);
+  const w = state.workouts[pickerWid];
+  if (!cat || !w) return;
+  w.exercises.push({
+    id: uid('ex'), exerciseId: cat.id, name: cat.name_pt, grip: '—', sets: 3,
+    reps: { M1: '10-12', M2: '8-10', M3: '6-8' }, rest: '60-90s', restSec: 75,
+    notes: '', isNew: true, weight: '', weightUpdatedAt: null, bestWeight: null,
+  });
+  Store.save();
+  closePicker();
+  renderWorkoutsTab();
+  renderHome();
+  showToast(`“${cat.name_pt}” adicionado ao ${w.name}.`);
+  const cards = document.querySelectorAll('#editor-exercises .editor-ex-card');
+  if (cards.length) cards[cards.length - 1].scrollIntoView({ block: 'center' });
+}
+
+function showCustomForm(prefill) {
+  fillSelect(document.getElementById('custom-muscle'), [...new Set([...Catalog.muscles(), 'outro'])]);
+  fillSelect(document.getElementById('custom-equip'), [...new Set([...Catalog.equipments(), 'outro'])]);
+  document.getElementById('custom-name').value = prefill || '';
+  document.getElementById('picker-list-view').hidden = true;
+  document.getElementById('picker-form-view').hidden = false;
+  document.getElementById('custom-name').focus();
+}
+
+function saveCustomExercise() {
+  const name = document.getElementById('custom-name').value.trim();
+  if (!name) { document.getElementById('custom-name').focus(); return; }
+  const dup = Catalog.findByName(name);
+  if (dup && confirm(`Já existe “${dup.name_pt}” no catálogo. Usar o existente?`)) {
+    pickExercise(dup.id);
+    return;
+  }
+  const c = Catalog.makeCustom({
+    name_pt: name,
+    muscle_primary: document.getElementById('custom-muscle').value,
+    equipment: document.getElementById('custom-equip').value,
+  });
+  state.customExercises.push(c);
+  Catalog.setCustom(state.customExercises);
+  Store.save();
+  pickExercise(c.id);
+}
+
+function wirePicker() {
+  const $ = (id) => document.getElementById(id);
+  $('picker-close').addEventListener('click', closePicker);
+  $('picker-form-close').addEventListener('click', closePicker);
+  $('picker').addEventListener('click', (ev) => { if (ev.target.id === 'picker') closePicker(); });
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && !$('picker').hidden) closePicker(); });
+  $('picker-q').addEventListener('input', () => { clearTimeout(pickerTimer); pickerTimer = setTimeout(renderPickerList, 80); });
+  $('picker-muscle').addEventListener('change', renderPickerList);
+  $('picker-equip').addEventListener('change', renderPickerList);
+  $('picker-list').addEventListener('click', (ev) => {
+    const item = ev.target.closest('[data-pick-ex]');
+    if (item) return pickExercise(item.dataset.pickEx);
+    if (ev.target.closest('[data-create-from-query]')) showCustomForm($('picker-q').value.trim());
+  });
+  $('picker-custom').addEventListener('click', () => showCustomForm($('picker-q').value.trim()));
+  $('custom-back').addEventListener('click', () => {
+    $('picker-form-view').hidden = true;
+    $('picker-list-view').hidden = false;
+    $('picker-q').focus();
+  });
+  $('custom-save').addEventListener('click', saveCustomExercise);
+  $('custom-name').addEventListener('keydown', (ev) => { if (ev.key === 'Enter') saveCustomExercise(); });
+}
+
+// ---------------------------------------------------------------------------
 // CATÁLOGO: carregamento, migração (com backup obrigatório) e armazenamento persistente
 // ---------------------------------------------------------------------------
 let storagePersisted = null;
@@ -805,7 +949,8 @@ function linkedCount() {
 function renderCatalogStatus() {
   const total = Object.values(state.workouts).flatMap((w) => w.exercises).length;
   document.getElementById('catalog-status').textContent = Catalog.ready
-    ? `${linkedCount()} de ${total} exercícios vinculados ao catálogo (${Object.keys(Catalog.byId).length} disponíveis).`
+    ? `${linkedCount()} de ${total} exercícios vinculados ao catálogo (${Object.keys(Catalog.byId).length} disponíveis` +
+      `${state.customExercises.length ? ', ' + state.customExercises.length + ' personalizados' : ''}).`
     : 'Catálogo indisponível agora (sem conexão); usando os nomes salvos.';
   document.getElementById('persist-status').textContent = storagePersisted === null
     ? 'Armazenamento protegido: não suportado neste navegador.'

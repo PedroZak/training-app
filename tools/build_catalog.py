@@ -14,6 +14,7 @@ DB_URL = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/e
 IMG_BASE = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/"
 SRC_REPO = "https://github.com/yuhonas/free-exercise-db"
 MAX_W, WEBP_QUALITY = 600, 78
+THUMB_W, THUMB_QUALITY = 160, 70  # miniatura da lista do seletor (não entra em media[], não faz loop)
 
 MUSCLE_PT = {
     "abdominals": "abdômen", "abductors": "abdutores", "adductors": "adutores", "biceps": "bíceps",
@@ -75,10 +76,21 @@ def process(job):
     return dest
 
 
+def make_thumb(job):
+    from PIL import Image
+    orig, dest = job
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    with Image.open(orig) as im:
+        im = im.convert("RGB")
+        im = im.resize((THUMB_W, round(im.height * THUMB_W / im.width)), Image.LANCZOS)
+        im.save(dest, "WEBP", quality=THUMB_QUALITY, method=6)
+    return dest
+
+
 def main():
     no_media = "--no-media" in sys.argv
     db = fetch_db()
-    catalog, jobs, seen = [], [], set()
+    catalog, jobs, thumb_jobs, seen = [], [], [], set()
     for fed_id, slug, name_pt, aliases in parse_curated():
         if fed_id not in db:
             sys.exit(f"id inexistente no free-exercise-db: {fed_id}")
@@ -96,6 +108,8 @@ def main():
                 "attribution": f"free-exercise-db — {SRC_REPO} (recomprimida: WebP, máx. {MAX_W}px)",
             })
             jobs.append((IMG_BASE + img, CACHE / "img" / img, ROOT / rel))
+        if e["images"]:
+            thumb_jobs.append((CACHE / "img" / e["images"][0], ROOT / "media" / slug / "thumb.webp"))
         catalog.append({
             "id": slug,
             "name_pt": name_pt,
@@ -106,6 +120,7 @@ def main():
             "muscle_secondary": [MUSCLE_PT[m] for m in e.get("secondaryMuscles", []) if m in MUSCLE_PT],
             "equipment": EQUIP_OVERRIDE.get(slug, EQUIP_PT.get(e.get("equipment"), "outro")),
             "category": "força",
+            "thumb": f"media/{slug}/thumb.webp" if e["images"] else None,
             "media": media,
             "custom": False,
             "source_id": fed_id,
@@ -113,7 +128,7 @@ def main():
     for c in CUSTOM:
         if c["id"] in seen:
             sys.exit(f"slug duplicado: {c['id']}")
-        catalog.append({**c, "name_pt_status": "a_revisar", "media": [], "custom": True, "source_id": None})
+        catalog.append({**c, "name_pt_status": "a_revisar", "thumb": None, "media": [], "custom": True, "source_id": None})
     catalog.sort(key=lambda x: x["name_pt"].lower())
 
     out = ROOT / "exercises.json"
@@ -126,6 +141,9 @@ def main():
             done = list(ex.map(process, jobs))
         total = sum(d.stat().st_size for d in done)
         print(f"mídias: {len(done)} arquivos WebP, {total/1e6:.1f} MB")
+        with cf.ThreadPoolExecutor(8) as ex:
+            thumbs = list(ex.map(make_thumb, thumb_jobs))
+        print(f"miniaturas: {len(thumbs)} arquivos, {sum(t.stat().st_size for t in thumbs)/1e6:.2f} MB")
 
 
 if __name__ == "__main__":
