@@ -1,0 +1,5623 @@
+{
+ "version": 1,
+ "exercises": [
+  {
+   "id": "abdominal-completo",
+   "name_pt": "Abdominal completo (sit-up)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Sit-Up",
+   "aliases": [
+    "sit up",
+    "situp"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/abdominal-completo/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Sit-Up/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/abdominal-completo/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Sit-Up/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Sit-Up"
+  },
+  {
+   "id": "abdominal-infra-solo",
+   "name_pt": "Abdominal infra (reverso)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Crunch",
+   "aliases": [
+    "abdominal infra",
+    "crunch reverso"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/abdominal-infra-solo/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Crunch/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/abdominal-infra-solo/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Crunch/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Crunch"
+  },
+  {
+   "id": "abdominal-maquina",
+   "name_pt": "Abdominal na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Ab Crunch Machine",
+   "aliases": [
+    "crunch máquina",
+    "crunch na máquina",
+    "abdominal máquina"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/abdominal-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Ab_Crunch_Machine/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/abdominal-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Ab_Crunch_Machine/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Ab_Crunch_Machine"
+  },
+  {
+   "id": "abdominal-polia",
+   "name_pt": "Abdominal na polia (ajoelhado)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Crunch",
+   "aliases": [
+    "abdominal supra polia",
+    "abdominal polia",
+    "crunch polia",
+    "abdominal corda",
+    "cable crunch"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/abdominal-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Crunch/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/abdominal-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Crunch/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Crunch"
+  },
+  {
+   "id": "abdominal-declinado",
+   "name_pt": "Abdominal no banco declinado",
+   "name_pt_status": "a_revisar",
+   "name_en": "Decline Crunch",
+   "aliases": [
+    "abdominal declinado"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/abdominal-declinado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Decline_Crunch/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/abdominal-declinado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Decline_Crunch/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Decline_Crunch"
+  },
+  {
+   "id": "abdominal-supra",
+   "name_pt": "Abdominal supra (crunch)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Crunches",
+   "aliases": [
+    "abdominal",
+    "crunch",
+    "abdominal no solo"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/abdominal-supra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Crunches/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/abdominal-supra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Crunches/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Crunches"
+  },
+  {
+   "id": "afundo-barra",
+   "name_pt": "Afundo com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Lunge",
+   "aliases": [
+    "avanço com barra",
+    "lunge barra"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/afundo-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Lunge/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/afundo-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Lunge/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Lunge"
+  },
+  {
+   "id": "afundo-halteres",
+   "name_pt": "Afundo com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Lunges",
+   "aliases": [
+    "avanço",
+    "avanço com halteres",
+    "passada halteres",
+    "afundo"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/afundo-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Lunges/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/afundo-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Lunges/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Lunges"
+  },
+  {
+   "id": "afundo-reverso-halteres",
+   "name_pt": "Afundo reverso com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Rear Lunge",
+   "aliases": [
+    "avanço reverso"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/afundo-reverso-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Rear_Lunge/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/afundo-reverso-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Rear_Lunge/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Rear_Lunge"
+  },
+  {
+   "id": "agachamento-halteres",
+   "name_pt": "Agachamento com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Squat",
+   "aliases": [
+    "agachamento halter"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa",
+    "lombar"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Squat/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Squat/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Squat"
+  },
+  {
+   "id": "agachamento-frontal",
+   "name_pt": "Agachamento frontal",
+   "name_pt_status": "a_revisar",
+   "name_en": "Front Barbell Squat",
+   "aliases": [
+    "front squat"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-frontal/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Front_Barbell_Squat/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-frontal/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Front_Barbell_Squat/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Front_Barbell_Squat"
+  },
+  {
+   "id": "agachamento-goblet",
+   "name_pt": "Agachamento goblet",
+   "name_pt_status": "a_revisar",
+   "name_en": "Goblet Squat",
+   "aliases": [
+    "goblet squat"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa",
+    "ombros"
+   ],
+   "equipment": "kettlebell",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-goblet/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Goblet_Squat/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-goblet/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Goblet_Squat/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Goblet_Squat"
+  },
+  {
+   "id": "agachamento-hack",
+   "name_pt": "Agachamento hack",
+   "name_pt_status": "a_revisar",
+   "name_en": "Hack Squat",
+   "aliases": [
+    "hack",
+    "hack machine",
+    "agachamento hack machine"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-hack/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Hack_Squat/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-hack/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Hack_Squat/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Hack_Squat"
+  },
+  {
+   "id": "agachamento-livre-barra",
+   "name_pt": "Agachamento livre com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Squat",
+   "aliases": [
+    "agachamento livre",
+    "agachamento",
+    "squat",
+    "agachamento costas",
+    "back squat"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa",
+    "lombar"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-livre-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Squat/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-livre-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Squat/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Squat"
+  },
+  {
+   "id": "agachamento-smith",
+   "name_pt": "Agachamento no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Squat",
+   "aliases": [
+    "agachamento guiado",
+    "smith squat",
+    "agachamento smith"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa",
+    "lombar"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Squat/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Squat/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Squat"
+  },
+  {
+   "id": "agachamento-split-halteres",
+   "name_pt": "Agachamento split com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Split Squat with Dumbbells",
+   "aliases": [
+    "split squat"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/agachamento-split-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Split_Squat_with_Dumbbells/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/agachamento-split-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Split_Squat_with_Dumbbells/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Split_Squat_with_Dumbbells"
+  },
+  {
+   "id": "barra-fixa-pronada",
+   "name_pt": "Barra fixa (pegada pronada)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Pullups",
+   "aliases": [
+    "barra fixa",
+    "barra",
+    "pull-up",
+    "pullup",
+    "pull up"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/barra-fixa-pronada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Pullups/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/barra-fixa-pronada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Pullups/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Pullups"
+  },
+  {
+   "id": "barra-fixa-supinada",
+   "name_pt": "Barra fixa supinada",
+   "name_pt_status": "a_revisar",
+   "name_en": "Chin-Up",
+   "aliases": [
+    "chin-up",
+    "chin up",
+    "barra supinada",
+    "barra fixa supinada"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "antebraço",
+    "costas (espessura)"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/barra-fixa-supinada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Chin-Up/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/barra-fixa-supinada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Chin-Up/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Chin-Up"
+  },
+  {
+   "id": "bom-dia",
+   "name_pt": "Bom dia (good morning)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Good Morning",
+   "aliases": [
+    "good morning",
+    "bom dia"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "abdômen",
+    "glúteos",
+    "lombar"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/bom-dia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Good_Morning/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/bom-dia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Good_Morning/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Good_Morning"
+  },
+  {
+   "id": "cadeira-abdutora",
+   "name_pt": "Cadeira abdutora",
+   "name_pt_status": "a_revisar",
+   "name_en": "Thigh Abductor",
+   "aliases": [
+    "abdutora",
+    "abdução de quadril na máquina"
+   ],
+   "muscle_primary": "abdutores",
+   "muscle_secondary": [
+    "glúteos"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/cadeira-abdutora/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Thigh_Abductor/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/cadeira-abdutora/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Thigh_Abductor/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Thigh_Abductor"
+  },
+  {
+   "id": "cadeira-adutora",
+   "name_pt": "Cadeira adutora",
+   "name_pt_status": "a_revisar",
+   "name_en": "Thigh Adductor",
+   "aliases": [
+    "adutora"
+   ],
+   "muscle_primary": "adutores",
+   "muscle_secondary": [
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/cadeira-adutora/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Thigh_Adductor/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/cadeira-adutora/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Thigh_Adductor/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Thigh_Adductor"
+  },
+  {
+   "id": "cadeira-extensora",
+   "name_pt": "Cadeira extensora",
+   "name_pt_status": "a_revisar",
+   "name_en": "Leg Extensions",
+   "aliases": [
+    "extensora",
+    "leg extension",
+    "extensão de pernas"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/cadeira-extensora/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Leg_Extensions/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/cadeira-extensora/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Leg_Extensions/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Leg_Extensions"
+  },
+  {
+   "id": "extensora-unilateral",
+   "name_pt": "Cadeira extensora unilateral",
+   "name_pt_status": "a_revisar",
+   "name_en": "Single-Leg Leg Extension",
+   "aliases": [
+    "extensora um braço",
+    "extensora uma perna"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/extensora-unilateral/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Single-Leg_Leg_Extension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/extensora-unilateral/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Single-Leg_Leg_Extension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Single-Leg_Leg_Extension"
+  },
+  {
+   "id": "cadeira-flexora",
+   "name_pt": "Cadeira flexora",
+   "name_pt_status": "a_revisar",
+   "name_en": "Seated Leg Curl",
+   "aliases": [
+    "flexora sentada",
+    "leg curl sentado"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/cadeira-flexora/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Seated_Leg_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/cadeira-flexora/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Seated_Leg_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Seated_Leg_Curl"
+  },
+  {
+   "id": "coice-gluteo",
+   "name_pt": "Coice de glúteo",
+   "name_pt_status": "a_revisar",
+   "name_en": "Glute Kickback",
+   "aliases": [
+    "glute kickback",
+    "coice quatro apoios"
+   ],
+   "muscle_primary": "glúteos",
+   "muscle_secondary": [
+    "posterior de coxa"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/coice-gluteo/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Glute_Kickback/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/coice-gluteo/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Glute_Kickback/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Glute_Kickback"
+  },
+  {
+   "id": "coice-polia",
+   "name_pt": "Coice de glúteo na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "One-Legged Cable Kickback",
+   "aliases": [
+    "coice na polia",
+    "kickback polia"
+   ],
+   "muscle_primary": "glúteos",
+   "muscle_secondary": [
+    "posterior de coxa"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/coice-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/One-Legged_Cable_Kickback/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/coice-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/One-Legged_Cable_Kickback/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "One-Legged_Cable_Kickback"
+  },
+  {
+   "id": "crossover-polia-alta",
+   "name_pt": "Crossover na polia alta",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Crossover",
+   "aliases": [
+    "crossover",
+    "cross over",
+    "crossover polia",
+    "cruzamento na polia",
+    "crucifixo na polia"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crossover-polia-alta/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Crossover/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crossover-polia-alta/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Crossover/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Crossover"
+  },
+  {
+   "id": "crossover-polia-baixa",
+   "name_pt": "Crossover na polia baixa",
+   "name_pt_status": "a_revisar",
+   "name_en": "Low Cable Crossover",
+   "aliases": [
+    "crossover baixo",
+    "crossover invertido",
+    "crucifixo polia baixa"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crossover-polia-baixa/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Low_Cable_Crossover/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crossover-polia-baixa/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Low_Cable_Crossover/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Low_Cable_Crossover"
+  },
+  {
+   "id": "crucifixo-inclinado-halteres",
+   "name_pt": "Crucifixo inclinado com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Incline Dumbbell Flyes",
+   "aliases": [
+    "crucifixo inclinado"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crucifixo-inclinado-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Incline_Dumbbell_Flyes/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crucifixo-inclinado-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Incline_Dumbbell_Flyes/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Incline_Dumbbell_Flyes"
+  },
+  {
+   "id": "crucifixo-invertido-halteres",
+   "name_pt": "Crucifixo invertido com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Flyes",
+   "aliases": [
+    "crucifixo inverso",
+    "posterior de ombro",
+    "reverse fly",
+    "voador invertido halteres"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crucifixo-invertido-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Flyes/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crucifixo-invertido-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Flyes/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Flyes"
+  },
+  {
+   "id": "crucifixo-invertido-maquina",
+   "name_pt": "Crucifixo invertido na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Machine Flyes",
+   "aliases": [
+    "crucifixo invertido",
+    "peck deck invertido",
+    "voador invertido",
+    "crucifixo inverso máquina"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crucifixo-invertido-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Machine_Flyes/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crucifixo-invertido-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Machine_Flyes/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Machine_Flyes"
+  },
+  {
+   "id": "crucifixo-invertido-polia",
+   "name_pt": "Crucifixo invertido na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Rear Delt Fly",
+   "aliases": [
+    "posterior de ombro polia"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crucifixo-invertido-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Rear_Delt_Fly/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crucifixo-invertido-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Rear_Delt_Fly/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Rear_Delt_Fly"
+  },
+  {
+   "id": "crucifixo-reto-halteres",
+   "name_pt": "Crucifixo reto com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Flyes",
+   "aliases": [
+    "crucifixo",
+    "crucifixo reto",
+    "fly com halteres",
+    "voador com halteres"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/crucifixo-reto-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Flyes/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/crucifixo-reto-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Flyes/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Flyes"
+  },
+  {
+   "id": "desenvolvimento-arnold",
+   "name_pt": "Desenvolvimento Arnold",
+   "name_pt_status": "a_revisar",
+   "name_en": "Arnold Dumbbell Press",
+   "aliases": [
+    "arnold press",
+    "desenvolvimento arnold"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-arnold/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Arnold_Dumbbell_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-arnold/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Arnold_Dumbbell_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Arnold_Dumbbell_Press"
+  },
+  {
+   "id": "desenvolvimento-barra",
+   "name_pt": "Desenvolvimento com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Shoulder Press",
+   "aliases": [
+    "desenvolvimento militar",
+    "military press",
+    "desenvolvimento barra frente"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "peito",
+    "tríceps"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Shoulder_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Shoulder_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Shoulder_Press"
+  },
+  {
+   "id": "desenvolvimento-halteres-em-pe",
+   "name_pt": "Desenvolvimento com halteres em pé",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Dumbbell Press",
+   "aliases": [
+    "desenvolvimento em pé halteres"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-halteres-em-pe/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-halteres-em-pe/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Dumbbell_Press"
+  },
+  {
+   "id": "desenvolvimento-halteres-sentado",
+   "name_pt": "Desenvolvimento com halteres sentado",
+   "name_pt_status": "a_revisar",
+   "name_en": "Seated Dumbbell Press",
+   "aliases": [
+    "desenvolvimento halteres",
+    "desenvolvimento sentado",
+    "desenv halteres sentado",
+    "shoulder press halteres"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-halteres-sentado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Seated_Dumbbell_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-halteres-sentado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Seated_Dumbbell_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Seated_Dumbbell_Press"
+  },
+  {
+   "id": "desenvolvimento-maquina",
+   "name_pt": "Desenvolvimento na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Machine Shoulder (Military) Press",
+   "aliases": [
+    "ombro máquina",
+    "shoulder press máquina"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "tríceps"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Machine_Shoulder_Military_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Machine_Shoulder_Military_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Machine_Shoulder_Military_Press"
+  },
+  {
+   "id": "desenvolvimento-smith",
+   "name_pt": "Desenvolvimento no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Overhead Shoulder Press",
+   "aliases": [
+    "desenvolvimento guiado"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "tríceps"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Overhead_Shoulder_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/desenvolvimento-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Overhead_Shoulder_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Overhead_Shoulder_Press"
+  },
+  {
+   "id": "elevacao-pernas-banco",
+   "name_pt": "Elevação de pernas no banco",
+   "name_pt_status": "a_revisar",
+   "name_en": "Flat Bench Lying Leg Raise",
+   "aliases": [
+    "elevação de pernas deitado"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-pernas-banco/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Flat_Bench_Lying_Leg_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-pernas-banco/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Flat_Bench_Lying_Leg_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Flat_Bench_Lying_Leg_Raise"
+  },
+  {
+   "id": "elevacao-pernas-suspenso",
+   "name_pt": "Elevação de pernas suspenso",
+   "name_pt_status": "a_revisar",
+   "name_en": "Hanging Leg Raise",
+   "aliases": [
+    "elevação de pernas na barra",
+    "hanging leg raise",
+    "abdominal suspenso"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-pernas-suspenso/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Hanging_Leg_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-pernas-suspenso/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Hanging_Leg_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Hanging_Leg_Raise"
+  },
+  {
+   "id": "elevacao-frontal-halteres",
+   "name_pt": "Elevação frontal com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Front Dumbbell Raise",
+   "aliases": [
+    "elevação frontal",
+    "front raise",
+    "elevação frontal alternada",
+    "elevação frontal halter"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-frontal-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Front_Dumbbell_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-frontal-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Front_Dumbbell_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Front_Dumbbell_Raise"
+  },
+  {
+   "id": "elevacao-frontal-polia",
+   "name_pt": "Elevação frontal na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Front Cable Raise",
+   "aliases": [
+    "frontal na polia"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-frontal-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Front_Cable_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-frontal-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Front_Cable_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Front_Cable_Raise"
+  },
+  {
+   "id": "elevacao-lateral-halteres",
+   "name_pt": "Elevação lateral com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Side Lateral Raise",
+   "aliases": [
+    "elevação lateral",
+    "lateral raise",
+    "elevação lateral halter",
+    "lateral com halteres"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-lateral-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Side_Lateral_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-lateral-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Side_Lateral_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Side_Lateral_Raise"
+  },
+  {
+   "id": "elevacao-lateral-polia",
+   "name_pt": "Elevação lateral na polia baixa",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Low-Pulley Deltoid Raise",
+   "aliases": [
+    "elevação lateral polia",
+    "lateral na polia"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-lateral-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Low-Pulley_Deltoid_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-lateral-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Low-Pulley_Deltoid_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Low-Pulley_Deltoid_Raise"
+  },
+  {
+   "id": "elevacao-lateral-polia-sentado",
+   "name_pt": "Elevação lateral na polia sentado",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Seated Lateral Raise",
+   "aliases": [
+    "lateral na polia sentado"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "costas (espessura)",
+    "trapézio"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-lateral-polia-sentado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Seated_Lateral_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-lateral-polia-sentado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Seated_Lateral_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Seated_Lateral_Raise"
+  },
+  {
+   "id": "elevacao-pelvica-barra",
+   "name_pt": "Elevação pélvica com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Hip Thrust",
+   "aliases": [
+    "hip thrust",
+    "ponte com barra",
+    "elevação de quadril",
+    "hip thrust barra"
+   ],
+   "muscle_primary": "glúteos",
+   "muscle_secondary": [
+    "panturrilha",
+    "posterior de coxa"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/elevacao-pelvica-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Hip_Thrust/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/elevacao-pelvica-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Hip_Thrust/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Hip_Thrust"
+  },
+  {
+   "id": "encolhimento-barra",
+   "name_pt": "Encolhimento com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Shrug",
+   "aliases": [
+    "encolhimento",
+    "shrug",
+    "encolhimento de ombros barra"
+   ],
+   "muscle_primary": "trapézio",
+   "muscle_secondary": [],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/encolhimento-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Shrug/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/encolhimento-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Shrug/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Shrug"
+  },
+  {
+   "id": "encolhimento-halteres",
+   "name_pt": "Encolhimento com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Shrug",
+   "aliases": [
+    "encolhimento halteres",
+    "shrug halteres",
+    "trapézio halteres"
+   ],
+   "muscle_primary": "trapézio",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/encolhimento-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Shrug/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/encolhimento-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Shrug/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Shrug"
+  },
+  {
+   "id": "encolhimento-maquina",
+   "name_pt": "Encolhimento na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Leverage Shrug",
+   "aliases": [
+    "shrug máquina"
+   ],
+   "muscle_primary": "trapézio",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/encolhimento-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Leverage_Shrug/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/encolhimento-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Leverage_Shrug/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Leverage_Shrug"
+  },
+  {
+   "id": "encolhimento-polia",
+   "name_pt": "Encolhimento na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Shrugs",
+   "aliases": [
+    "shrug polia"
+   ],
+   "muscle_primary": "trapézio",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/encolhimento-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Shrugs/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/encolhimento-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Shrugs/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Shrugs"
+  },
+  {
+   "id": "extensao-lombar",
+   "name_pt": "Extensão lombar (banco romano)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Hyperextensions (Back Extensions)",
+   "aliases": [
+    "hiperextensão",
+    "lombar no banco",
+    "banco romano",
+    "hyperextension"
+   ],
+   "muscle_primary": "lombar",
+   "muscle_secondary": [
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "banco romano",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/extensao-lombar/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Hyperextensions_Back_Extensions/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/extensao-lombar/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Hyperextensions_Back_Extensions/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Hyperextensions_Back_Extensions"
+  },
+  {
+   "id": "face-pull",
+   "name_pt": "Face pull",
+   "name_pt_status": "a_revisar",
+   "name_en": "Face Pull",
+   "aliases": [
+    "face pull corda",
+    "puxada para o rosto",
+    "puxada na corda para o rosto"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "costas (espessura)"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/face-pull/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Face_Pull/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/face-pull/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Face_Pull/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Face_Pull"
+  },
+  {
+   "id": "flexora-em-pe",
+   "name_pt": "Flexora em pé",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Leg Curl",
+   "aliases": [
+    "flexora unilateral em pé"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/flexora-em-pe/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Leg_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/flexora-em-pe/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Leg_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Leg_Curl"
+  },
+  {
+   "id": "flexao-de-braco",
+   "name_pt": "Flexão de braço",
+   "name_pt_status": "a_revisar",
+   "name_en": "Pushups",
+   "aliases": [
+    "flexão",
+    "flexao",
+    "apoio",
+    "push up",
+    "push-up"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/flexao-de-braco/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Pushups/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/flexao-de-braco/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Pushups/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Pushups"
+  },
+  {
+   "id": "hiperextensao-reversa",
+   "name_pt": "Hiperextensão reversa",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Hyperextension",
+   "aliases": [
+    "extensão reversa"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/hiperextensao-reversa/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Hyperextension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/hiperextensao-reversa/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Hyperextension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Hyperextension"
+  },
+  {
+   "id": "inclinacao-lateral-halter",
+   "name_pt": "Inclinação lateral com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Side Bend",
+   "aliases": [
+    "flexão lateral de tronco",
+    "oblíquo com halter"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/inclinacao-lateral-halter/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Side_Bend/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/inclinacao-lateral-halter/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Side_Bend/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Side_Bend"
+  },
+  {
+   "id": "leg-press-45",
+   "name_pt": "Leg press 45°",
+   "name_pt_status": "a_revisar",
+   "name_en": "Leg Press",
+   "aliases": [
+    "leg press",
+    "leg 45",
+    "leg press inclinado"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/leg-press-45/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Leg_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/leg-press-45/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Leg_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Leg_Press"
+  },
+  {
+   "id": "leg-press-fechado",
+   "name_pt": "Leg press com pés juntos",
+   "name_pt_status": "a_revisar",
+   "name_en": "Narrow Stance Leg Press",
+   "aliases": [
+    "leg press fechado"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/leg-press-fechado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Narrow_Stance_Leg_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/leg-press-fechado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Narrow_Stance_Leg_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Narrow_Stance_Leg_Press"
+  },
+  {
+   "id": "levantamento-terra",
+   "name_pt": "Levantamento terra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Deadlift",
+   "aliases": [
+    "terra",
+    "deadlift",
+    "terra convencional"
+   ],
+   "muscle_primary": "lombar",
+   "muscle_secondary": [
+    "panturrilha",
+    "antebraço",
+    "glúteos",
+    "posterior de coxa",
+    "costas (dorsal)",
+    "costas (espessura)",
+    "quadríceps",
+    "trapézio"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/levantamento-terra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Deadlift/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/levantamento-terra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Deadlift/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Deadlift"
+  },
+  {
+   "id": "terra-romeno",
+   "name_pt": "Levantamento terra romeno",
+   "name_pt_status": "a_revisar",
+   "name_en": "Romanian Deadlift",
+   "aliases": [
+    "rdl",
+    "terra romeno",
+    "romanian deadlift",
+    "romeno"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "lombar"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/terra-romeno/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Romanian_Deadlift/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/terra-romeno/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Romanian_Deadlift/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Romanian_Deadlift"
+  },
+  {
+   "id": "terra-sumo",
+   "name_pt": "Levantamento terra sumô",
+   "name_pt_status": "a_revisar",
+   "name_en": "Sumo Deadlift",
+   "aliases": [
+    "terra sumo",
+    "sumo deadlift"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "adutores",
+    "antebraço",
+    "glúteos",
+    "lombar",
+    "costas (espessura)",
+    "quadríceps",
+    "trapézio"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/terra-sumo/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Sumo_Deadlift/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/terra-sumo/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Sumo_Deadlift/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Sumo_Deadlift"
+  },
+  {
+   "id": "mergulho-banco",
+   "name_pt": "Mergulho no banco",
+   "name_pt_status": "a_revisar",
+   "name_en": "Bench Dips",
+   "aliases": [
+    "tríceps banco",
+    "bench dip",
+    "mergulho banco"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [
+    "peito",
+    "ombros"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/mergulho-banco/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Bench_Dips/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/mergulho-banco/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Bench_Dips/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Bench_Dips"
+  },
+  {
+   "id": "mesa-flexora",
+   "name_pt": "Mesa flexora",
+   "name_pt_status": "a_revisar",
+   "name_en": "Lying Leg Curls",
+   "aliases": [
+    "flexora deitada",
+    "leg curl deitado",
+    "flexora"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/mesa-flexora/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Lying_Leg_Curls/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/mesa-flexora/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Lying_Leg_Curls/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Lying_Leg_Curls"
+  },
+  {
+   "id": "mesa-gluteo-isquio",
+   "name_pt": "Mesa glúteo-isquio (GHR)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Glute Ham Raise",
+   "aliases": [
+    "ghr",
+    "glute ham raise"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/mesa-gluteo-isquio/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Glute_Ham_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/mesa-gluteo-isquio/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Glute_Ham_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Glute_Ham_Raise"
+  },
+  {
+   "id": "pallof-press",
+   "name_pt": "Pallof press",
+   "name_pt_status": "a_revisar",
+   "name_en": "Pallof Press",
+   "aliases": [
+    "anti-rotação",
+    "pallof"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [
+    "peito",
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/pallof-press/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Pallof_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/pallof-press/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Pallof_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Pallof_Press"
+  },
+  {
+   "id": "panturrilha-halter-em-pe",
+   "name_pt": "Panturrilha em pé com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Dumbbell Calf Raise",
+   "aliases": [
+    "gêmeos halter"
+   ],
+   "muscle_primary": "panturrilha",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/panturrilha-halter-em-pe/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Calf_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/panturrilha-halter-em-pe/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Calf_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Dumbbell_Calf_Raise"
+  },
+  {
+   "id": "panturrilha-em-pe-maquina",
+   "name_pt": "Panturrilha em pé na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Calf Raises",
+   "aliases": [
+    "gêmeos em pé",
+    "calf raise em pé",
+    "panturrilha na máquina em pé"
+   ],
+   "muscle_primary": "panturrilha",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/panturrilha-em-pe-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Calf_Raises/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/panturrilha-em-pe-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Calf_Raises/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Calf_Raises"
+  },
+  {
+   "id": "panturrilha-leg-press",
+   "name_pt": "Panturrilha no Leg Press",
+   "name_pt_status": "a_revisar",
+   "name_en": "Calf Press On The Leg Press Machine",
+   "aliases": [
+    "panturrilha em pé",
+    "gêmeos no leg press",
+    "panturrilha leg press",
+    "calf press"
+   ],
+   "muscle_primary": "panturrilha",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/panturrilha-leg-press/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Calf_Press_On_The_Leg_Press_Machine/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/panturrilha-leg-press/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Calf_Press_On_The_Leg_Press_Machine/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Calf_Press_On_The_Leg_Press_Machine"
+  },
+  {
+   "id": "panturrilha-smith",
+   "name_pt": "Panturrilha no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Calf Raise",
+   "aliases": [
+    "gêmeos no smith"
+   ],
+   "muscle_primary": "panturrilha",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/panturrilha-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Calf_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/panturrilha-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Calf_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Calf_Raise"
+  },
+  {
+   "id": "panturrilha-sentado",
+   "name_pt": "Panturrilha sentado",
+   "name_pt_status": "a_revisar",
+   "name_en": "Seated Calf Raise",
+   "aliases": [
+    "panturrilha sentada",
+    "sóleo",
+    "gêmeos sentado"
+   ],
+   "muscle_primary": "panturrilha",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/panturrilha-sentado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Seated_Calf_Raise/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/panturrilha-sentado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Seated_Calf_Raise/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Seated_Calf_Raise"
+  },
+  {
+   "id": "paralelas-peito",
+   "name_pt": "Paralelas com foco em peito",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dips - Chest Version",
+   "aliases": [
+    "paralelas",
+    "mergulho",
+    "mergulho nas paralelas",
+    "dip",
+    "dips",
+    "dips peito",
+    "paralela peito"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/paralelas-peito/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dips_-_Chest_Version/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/paralelas-peito/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dips_-_Chest_Version/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dips_-_Chest_Version"
+  },
+  {
+   "id": "paralelas-triceps",
+   "name_pt": "Paralelas com foco em tríceps",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dips - Triceps Version",
+   "aliases": [
+    "mergulho tríceps",
+    "dips tríceps",
+    "paralela tríceps"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [
+    "peito",
+    "ombros"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/paralelas-triceps/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dips_-_Triceps_Version/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/paralelas-triceps/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dips_-_Triceps_Version/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dips_-_Triceps_Version"
+  },
+  {
+   "id": "paralelas-maquina",
+   "name_pt": "Paralelas na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dip Machine",
+   "aliases": [
+    "dip machine",
+    "mergulho máquina"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [
+    "peito",
+    "ombros"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/paralelas-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dip_Machine/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/paralelas-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dip_Machine/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dip_Machine"
+  },
+  {
+   "id": "passada-barra",
+   "name_pt": "Passada com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Walking Lunge",
+   "aliases": [
+    "passada",
+    "walking lunge",
+    "caminhada com afundo"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/passada-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Walking_Lunge/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/passada-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Walking_Lunge/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Walking_Lunge"
+  },
+  {
+   "id": "peck-deck",
+   "name_pt": "Peck deck (voador)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Butterfly",
+   "aliases": [
+    "peck deck",
+    "pec deck",
+    "peck deck convergente",
+    "voador",
+    "crucifixo na máquina",
+    "crucifixo máquina",
+    "fly máquina",
+    "peitoral voador"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/peck-deck/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Butterfly/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/peck-deck/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Butterfly/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Butterfly"
+  },
+  {
+   "id": "ponte-gluteo-barra",
+   "name_pt": "Ponte de glúteo com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Glute Bridge",
+   "aliases": [
+    "glute bridge barra"
+   ],
+   "muscle_primary": "glúteos",
+   "muscle_secondary": [
+    "panturrilha",
+    "posterior de coxa"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/ponte-gluteo-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Glute_Bridge/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/ponte-gluteo-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Glute_Bridge/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Glute_Bridge"
+  },
+  {
+   "id": "prancha",
+   "name_pt": "Prancha",
+   "name_pt_status": "a_revisar",
+   "name_en": "Plank",
+   "aliases": [
+    "plank",
+    "prancha isométrica"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/prancha/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Plank/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/prancha/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Plank/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Plank"
+  },
+  {
+   "id": "prancha-lateral",
+   "name_pt": "Prancha lateral",
+   "name_pt_status": "a_revisar",
+   "name_en": "Side Bridge",
+   "aliases": [
+    "side plank"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [
+    "ombros"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/prancha-lateral/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Side_Bridge/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/prancha-lateral/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Side_Bridge/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Side_Bridge"
+  },
+  {
+   "id": "pulldown-corda",
+   "name_pt": "Pulldown na corda (braços estendidos)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Rope Straight-Arm Pulldown",
+   "aliases": [
+    "pulldown corda",
+    "pulldown com corda",
+    "puxada na corda",
+    "pullover na corda",
+    "pullover polia corda",
+    "puxada corda braços estendidos"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/pulldown-corda/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Rope_Straight-Arm_Pulldown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/pulldown-corda/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Rope_Straight-Arm_Pulldown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Rope_Straight-Arm_Pulldown"
+  },
+  {
+   "id": "pullover-halter",
+   "name_pt": "Pullover com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "Straight-Arm Dumbbell Pullover",
+   "aliases": [
+    "pullover",
+    "pullover halteres"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "costas (dorsal)",
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/pullover-halter/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Straight-Arm_Dumbbell_Pullover/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/pullover-halter/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Straight-Arm_Dumbbell_Pullover/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Straight-Arm_Dumbbell_Pullover"
+  },
+  {
+   "id": "pullover-polia",
+   "name_pt": "Pullover na polia com barra (braços estendidos)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Straight-Arm Pulldown",
+   "aliases": [
+    "pulldown braço estendido",
+    "pulldown braço reto",
+    "pullover polia",
+    "pulldown reto",
+    "pullover na polia"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/pullover-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Straight-Arm_Pulldown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/pullover-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Straight-Arm_Pulldown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Straight-Arm_Pulldown"
+  },
+  {
+   "id": "puxada-alta-aberta",
+   "name_pt": "Puxada alta pegada aberta",
+   "name_pt_status": "a_revisar",
+   "name_en": "Wide-Grip Lat Pulldown",
+   "aliases": [
+    "puxada alta",
+    "puxada frontal",
+    "puxada na frente",
+    "puxada aberta",
+    "puxada alta barra",
+    "pulldown",
+    "lat pulldown",
+    "puxada"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)",
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/puxada-alta-aberta/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Wide-Grip_Lat_Pulldown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/puxada-alta-aberta/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Wide-Grip_Lat_Pulldown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Wide-Grip_Lat_Pulldown"
+  },
+  {
+   "id": "puxada-alta-fechada",
+   "name_pt": "Puxada alta pegada fechada",
+   "name_pt_status": "a_revisar",
+   "name_en": "Close-Grip Front Lat Pulldown",
+   "aliases": [
+    "puxada fechada",
+    "puxada triângulo fechada"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)",
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/puxada-alta-fechada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Close-Grip_Front_Lat_Pulldown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/puxada-alta-fechada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Close-Grip_Front_Lat_Pulldown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Close-Grip_Front_Lat_Pulldown"
+  },
+  {
+   "id": "puxada-supinada",
+   "name_pt": "Puxada alta supinada",
+   "name_pt_status": "a_revisar",
+   "name_en": "Underhand Cable Pulldowns",
+   "aliases": [
+    "puxada invertida",
+    "puxada pegada supinada",
+    "puxada supinada"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)",
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/puxada-supinada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Underhand_Cable_Pulldowns/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/puxada-supinada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Underhand_Cable_Pulldowns/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Underhand_Cable_Pulldowns"
+  },
+  {
+   "id": "puxada-nuca",
+   "name_pt": "Puxada atrás da nuca",
+   "name_pt_status": "a_revisar",
+   "name_en": "Wide-Grip Pulldown Behind The Neck",
+   "aliases": [
+    "puxada nuca"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)",
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/puxada-nuca/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Wide-Grip_Pulldown_Behind_The_Neck/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/puxada-nuca/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Wide-Grip_Pulldown_Behind_The_Neck/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Wide-Grip_Pulldown_Behind_The_Neck"
+  },
+  {
+   "id": "puxada-triangulo",
+   "name_pt": "Puxada com triângulo",
+   "name_pt_status": "a_revisar",
+   "name_en": "V-Bar Pulldown",
+   "aliases": [
+    "puxada no triângulo",
+    "puxada v-bar",
+    "puxada com pegada neutra"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)",
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/puxada-triangulo/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/V-Bar_Pulldown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/puxada-triangulo/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/V-Bar_Pulldown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "V-Bar_Pulldown"
+  },
+  {
+   "id": "puxada-unilateral",
+   "name_pt": "Puxada unilateral na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "One Arm Lat Pulldown",
+   "aliases": [
+    "puxada um braço"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/puxada-unilateral/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/One_Arm_Lat_Pulldown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/puxada-unilateral/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/One_Arm_Lat_Pulldown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "One_Arm_Lat_Pulldown"
+  },
+  {
+   "id": "remada-alta-barra",
+   "name_pt": "Remada alta com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Upright Barbell Row",
+   "aliases": [
+    "remada alta"
+   ],
+   "muscle_primary": "ombros",
+   "muscle_secondary": [
+    "trapézio"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-alta-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Upright_Barbell_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-alta-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Upright_Barbell_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Upright_Barbell_Row"
+  },
+  {
+   "id": "remada-alta-halteres",
+   "name_pt": "Remada alta com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Dumbbell Upright Row",
+   "aliases": [
+    "remada alta halteres"
+   ],
+   "muscle_primary": "trapézio",
+   "muscle_secondary": [
+    "bíceps",
+    "ombros"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-alta-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Upright_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-alta-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Upright_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Dumbbell_Upright_Row"
+  },
+  {
+   "id": "remada-alta-maquina",
+   "name_pt": "Remada alta na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Leverage High Row",
+   "aliases": [
+    "remada máquina alta"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "costas (dorsal)"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-alta-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Leverage_High_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-alta-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Leverage_High_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Leverage_High_Row"
+  },
+  {
+   "id": "remada-alta-polia",
+   "name_pt": "Remada alta na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Upright Cable Row",
+   "aliases": [
+    "remada alta polia"
+   ],
+   "muscle_primary": "trapézio",
+   "muscle_secondary": [
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-alta-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Upright_Cable_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-alta-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Upright_Cable_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Upright_Cable_Row"
+  },
+  {
+   "id": "remada-cavalinho",
+   "name_pt": "Remada cavalinho",
+   "name_pt_status": "a_revisar",
+   "name_en": "T-Bar Row with Handle",
+   "aliases": [
+    "t-bar row",
+    "remada t",
+    "remada barra t"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-cavalinho/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/T-Bar_Row_with_Handle/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-cavalinho/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/T-Bar_Row_with_Handle/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "T-Bar_Row_with_Handle"
+  },
+  {
+   "id": "remada-cavalinho-apoiada",
+   "name_pt": "Remada cavalinho com apoio de peito",
+   "name_pt_status": "a_revisar",
+   "name_en": "Lying T-Bar Row",
+   "aliases": [
+    "remada cavalinho apoiada"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-cavalinho-apoiada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Lying_T-Bar_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-cavalinho-apoiada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Lying_T-Bar_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Lying_T-Bar_Row"
+  },
+  {
+   "id": "remada-curvada-barra",
+   "name_pt": "Remada curvada com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Bent Over Barbell Row",
+   "aliases": [
+    "remada curvada",
+    "remada barra",
+    "remada com barra",
+    "bent over row"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-curvada-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Bent_Over_Barbell_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-curvada-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Bent_Over_Barbell_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Bent_Over_Barbell_Row"
+  },
+  {
+   "id": "remada-curvada-halteres",
+   "name_pt": "Remada curvada com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Bent Over Two-Dumbbell Row",
+   "aliases": [
+    "remada halteres",
+    "remada com halteres"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-curvada-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Bent_Over_Two-Dumbbell_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-curvada-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Bent_Over_Two-Dumbbell_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Bent_Over_Two-Dumbbell_Row"
+  },
+  {
+   "id": "remada-curvada-smith",
+   "name_pt": "Remada curvada no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Bent Over Row",
+   "aliases": [
+    "remada smith"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-curvada-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Bent_Over_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-curvada-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Bent_Over_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Bent_Over_Row"
+  },
+  {
+   "id": "remada-curvada-supinada",
+   "name_pt": "Remada curvada supinada",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Grip Bent-Over Rows",
+   "aliases": [
+    "remada curvada invertida",
+    "remada supinada"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-curvada-supinada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Grip_Bent-Over_Rows/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-curvada-supinada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Grip_Bent-Over_Rows/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Grip_Bent-Over_Rows"
+  },
+  {
+   "id": "remada-invertida",
+   "name_pt": "Remada invertida",
+   "name_pt_status": "a_revisar",
+   "name_en": "Inverted Row",
+   "aliases": [
+    "remada australiana",
+    "remada na barra baixa"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "costas (dorsal)"
+   ],
+   "equipment": "outro",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-invertida/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Inverted_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-invertida/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Inverted_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Inverted_Row"
+  },
+  {
+   "id": "remada-maquina-iso",
+   "name_pt": "Remada na máquina (iso-lateral)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Leverage Iso Row",
+   "aliases": [
+    "remada máquina",
+    "remada iso"
+   ],
+   "muscle_primary": "costas (dorsal)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (espessura)"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-maquina-iso/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Leverage_Iso_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-maquina-iso/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Leverage_Iso_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Leverage_Iso_Row"
+  },
+  {
+   "id": "remada-banco-inclinado",
+   "name_pt": "Remada no banco inclinado com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Incline Row",
+   "aliases": [
+    "remada peito apoiado halteres"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "antebraço",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-banco-inclinado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Incline_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-banco-inclinado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Incline_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Incline_Row"
+  },
+  {
+   "id": "remada-sentada-polia",
+   "name_pt": "Remada sentada na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Seated Cable Rows",
+   "aliases": [
+    "remada baixa",
+    "remada polia baixa",
+    "remada triângulo",
+    "remada sentada",
+    "seated row"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-sentada-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Seated_Cable_Rows/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-sentada-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Seated_Cable_Rows/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Seated_Cable_Rows"
+  },
+  {
+   "id": "remada-unilateral-halter",
+   "name_pt": "Remada unilateral com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "One-Arm Dumbbell Row",
+   "aliases": [
+    "serrote",
+    "remada serrote",
+    "remada unilateral",
+    "remada um braço"
+   ],
+   "muscle_primary": "costas (espessura)",
+   "muscle_secondary": [
+    "bíceps",
+    "costas (dorsal)",
+    "ombros"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/remada-unilateral-halter/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/One-Arm_Dumbbell_Row/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/remada-unilateral-halter/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/One-Arm_Dumbbell_Row/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "One-Arm_Dumbbell_Row"
+  },
+  {
+   "id": "roda-abdominal",
+   "name_pt": "Roda abdominal",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Ab Rollout",
+   "aliases": [
+    "ab wheel",
+    "rollout",
+    "roda"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [
+    "lombar",
+    "ombros"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/roda-abdominal/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Ab_Rollout/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/roda-abdominal/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Ab_Rollout/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Ab_Rollout"
+  },
+  {
+   "id": "rosca-alternada-halteres",
+   "name_pt": "Rosca alternada com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Alternate Bicep Curl",
+   "aliases": [
+    "rosca alternada"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-alternada-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Alternate_Bicep_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-alternada-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Alternate_Bicep_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Alternate_Bicep_Curl"
+  },
+  {
+   "id": "rosca-aranha",
+   "name_pt": "Rosca aranha",
+   "name_pt_status": "a_revisar",
+   "name_en": "Spider Curl",
+   "aliases": [
+    "rosca spider"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "barra W",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-aranha/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Spider_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-aranha/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Spider_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Spider_Curl"
+  },
+  {
+   "id": "rosca-concentrada",
+   "name_pt": "Rosca concentrada",
+   "name_pt_status": "a_revisar",
+   "name_en": "Concentration Curls",
+   "aliases": [
+    "concentrada"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-concentrada/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Concentration_Curls/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-concentrada/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Concentration_Curls/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Concentration_Curls"
+  },
+  {
+   "id": "rosca-punho-barra",
+   "name_pt": "Rosca de punho com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Palms-Up Barbell Wrist Curl Over A Bench",
+   "aliases": [
+    "rosca punho",
+    "wrist curl"
+   ],
+   "muscle_primary": "antebraço",
+   "muscle_secondary": [],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-punho-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Palms-Up_Barbell_Wrist_Curl_Over_A_Bench/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-punho-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Palms-Up_Barbell_Wrist_Curl_Over_A_Bench/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench"
+  },
+  {
+   "id": "rosca-punho-inversa",
+   "name_pt": "Rosca de punho inversa",
+   "name_pt_status": "a_revisar",
+   "name_en": "Palms-Down Wrist Curl Over A Bench",
+   "aliases": [
+    "rosca punho pronada"
+   ],
+   "muscle_primary": "antebraço",
+   "muscle_secondary": [],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-punho-inversa/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Palms-Down_Wrist_Curl_Over_A_Bench/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-punho-inversa/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Palms-Down_Wrist_Curl_Over_A_Bench/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Palms-Down_Wrist_Curl_Over_A_Bench"
+  },
+  {
+   "id": "rosca-direta-barra",
+   "name_pt": "Rosca direta com barra reta",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Curl",
+   "aliases": [
+    "rosca direta",
+    "rosca barra reta",
+    "rosca com barra",
+    "barbell curl"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-direta-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-direta-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Curl"
+  },
+  {
+   "id": "rosca-direta-barra-w",
+   "name_pt": "Rosca direta com barra W",
+   "name_pt_status": "a_revisar",
+   "name_en": "EZ-Bar Curl",
+   "aliases": [
+    "rosca w",
+    "rosca barra w",
+    "rosca direta barra w",
+    "rosca ez",
+    "rosca direta barra ez"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "barra W",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-direta-barra-w/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/EZ-Bar_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-direta-barra-w/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/EZ-Bar_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "EZ-Bar_Curl"
+  },
+  {
+   "id": "rosca-direta-halteres",
+   "name_pt": "Rosca direta com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Bicep Curl",
+   "aliases": [
+    "rosca halteres",
+    "rosca simultânea"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-direta-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Bicep_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-direta-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Bicep_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Bicep_Curl"
+  },
+  {
+   "id": "rosca-direta-polia",
+   "name_pt": "Rosca direta na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Biceps Cable Curl",
+   "aliases": [
+    "rosca polia",
+    "rosca na polia baixa"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-direta-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Biceps_Cable_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-direta-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Biceps_Cable_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Biceps_Cable_Curl"
+  },
+  {
+   "id": "rosca-inclinada-halteres",
+   "name_pt": "Rosca inclinada com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Incline Dumbbell Curl",
+   "aliases": [
+    "rosca inclinada",
+    "rosca banco inclinado",
+    "rosca 45",
+    "incline curl"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-inclinada-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Incline_Dumbbell_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-inclinada-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Incline_Dumbbell_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Incline_Dumbbell_Curl"
+  },
+  {
+   "id": "rosca-inversa-barra",
+   "name_pt": "Rosca inversa com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Barbell Curl",
+   "aliases": [
+    "rosca inversa",
+    "rosca pegada pronada"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-inversa-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Barbell_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-inversa-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Barbell_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Barbell_Curl"
+  },
+  {
+   "id": "rosca-martelo",
+   "name_pt": "Rosca martelo com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Hammer Curls",
+   "aliases": [
+    "rosca martelo",
+    "martelo",
+    "hammer curl"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-martelo/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Hammer_Curls/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-martelo/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Hammer_Curls/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Hammer_Curls"
+  },
+  {
+   "id": "rosca-martelo-corda",
+   "name_pt": "Rosca martelo na polia com corda",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Hammer Curls - Rope Attachment",
+   "aliases": [
+    "martelo na corda",
+    "rosca martelo corda"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-martelo-corda/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Hammer_Curls_-_Rope_Attachment/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-martelo-corda/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Hammer_Curls_-_Rope_Attachment/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Hammer_Curls_-_Rope_Attachment"
+  },
+  {
+   "id": "rosca-maquina",
+   "name_pt": "Rosca na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Machine Bicep Curl",
+   "aliases": [
+    "bíceps máquina"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Machine_Bicep_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Machine_Bicep_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Machine_Bicep_Curl"
+  },
+  {
+   "id": "rosca-polia-alta",
+   "name_pt": "Rosca na polia alta",
+   "name_pt_status": "a_revisar",
+   "name_en": "High Cable Curls",
+   "aliases": [
+    "duplo bíceps polia",
+    "rosca bíceps polia alta"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-polia-alta/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/High_Cable_Curls/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-polia-alta/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/High_Cable_Curls/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "High_Cable_Curls"
+  },
+  {
+   "id": "rosca-scott-barra",
+   "name_pt": "Rosca Scott com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Preacher Curl",
+   "aliases": [
+    "rosca scott",
+    "scott",
+    "preacher curl",
+    "rosca scott barra w"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-scott-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Preacher_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-scott-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Preacher_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Preacher_Curl"
+  },
+  {
+   "id": "rosca-scott-maquina",
+   "name_pt": "Rosca Scott na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Machine Preacher Curls",
+   "aliases": [
+    "scott máquina"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-scott-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Machine_Preacher_Curls/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-scott-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Machine_Preacher_Curls/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Machine_Preacher_Curls"
+  },
+  {
+   "id": "rosca-scott-halter",
+   "name_pt": "Rosca Scott unilateral com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "One Arm Dumbbell Preacher Curl",
+   "aliases": [
+    "scott halter"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-scott-halter/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/One_Arm_Dumbbell_Preacher_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-scott-halter/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/One_Arm_Dumbbell_Preacher_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "One_Arm_Dumbbell_Preacher_Curl"
+  },
+  {
+   "id": "rosca-zottman",
+   "name_pt": "Rosca Zottman",
+   "name_pt_status": "a_revisar",
+   "name_en": "Zottman Curl",
+   "aliases": [
+    "zottman"
+   ],
+   "muscle_primary": "bíceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rosca-zottman/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Zottman_Curl/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rosca-zottman/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Zottman_Curl/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Zottman_Curl"
+  },
+  {
+   "id": "rotacao-tronco-polia",
+   "name_pt": "Rotação de tronco na polia (lenhador)",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Cable Wood Chop",
+   "aliases": [
+    "wood chop",
+    "lenhador",
+    "rotação tronco polia",
+    "rotação de tronco polia alta"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [
+    "ombros"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rotacao-tronco-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Cable_Wood_Chop/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rotacao-tronco-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Cable_Wood_Chop/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Cable_Wood_Chop"
+  },
+  {
+   "id": "rotacao-russa",
+   "name_pt": "Rotação russa",
+   "name_pt_status": "a_revisar",
+   "name_en": "Russian Twist",
+   "aliases": [
+    "russian twist",
+    "torção russa"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [
+    "lombar"
+   ],
+   "equipment": "peso corporal",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rotacao-russa/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Russian_Twist/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rotacao-russa/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Russian_Twist/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Russian_Twist"
+  },
+  {
+   "id": "rotacao-russa-polia",
+   "name_pt": "Rotação russa na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Russian Twists",
+   "aliases": [
+    "russian twist polia"
+   ],
+   "muscle_primary": "abdômen",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/rotacao-russa-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Russian_Twists/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/rotacao-russa-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Russian_Twists/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Russian_Twists"
+  },
+  {
+   "id": "step-up-halteres",
+   "name_pt": "Step-up com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Step Ups",
+   "aliases": [
+    "subida no banco",
+    "step up"
+   ],
+   "muscle_primary": "quadríceps",
+   "muscle_secondary": [
+    "panturrilha",
+    "glúteos",
+    "posterior de coxa"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/step-up-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Step_Ups/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/step-up-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Step_Ups/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Step_Ups"
+  },
+  {
+   "id": "stiff-barra",
+   "name_pt": "Stiff com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Stiff-Legged Barbell Deadlift",
+   "aliases": [
+    "stiff",
+    "stiff barra",
+    "levantamento terra stiff",
+    "stiff leg deadlift"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "glúteos",
+    "lombar"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/stiff-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Stiff-Legged_Barbell_Deadlift/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/stiff-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Stiff-Legged_Barbell_Deadlift/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Stiff-Legged_Barbell_Deadlift"
+  },
+  {
+   "id": "stiff-halteres",
+   "name_pt": "Stiff com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Stiff-Legged Dumbbell Deadlift",
+   "aliases": [
+    "stiff halter"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "glúteos",
+    "lombar"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/stiff-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Stiff-Legged_Dumbbell_Deadlift/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/stiff-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Stiff-Legged_Dumbbell_Deadlift/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Stiff-Legged_Dumbbell_Deadlift"
+  },
+  {
+   "id": "stiff-smith",
+   "name_pt": "Stiff no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Stiff-Legged Deadlift",
+   "aliases": [
+    "stiff guiado"
+   ],
+   "muscle_primary": "posterior de coxa",
+   "muscle_secondary": [
+    "glúteos",
+    "lombar"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/stiff-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Stiff-Legged_Deadlift/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/stiff-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Stiff-Legged_Deadlift/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Stiff-Legged_Deadlift"
+  },
+  {
+   "id": "supino-declinado-barra",
+   "name_pt": "Supino declinado com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Decline Barbell Bench Press",
+   "aliases": [
+    "supino declinado",
+    "supino declinado barra"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-declinado-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Decline_Barbell_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-declinado-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Decline_Barbell_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Decline_Barbell_Bench_Press"
+  },
+  {
+   "id": "supino-declinado-halteres",
+   "name_pt": "Supino declinado com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Decline Dumbbell Bench Press",
+   "aliases": [
+    "supino declinado halter"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-declinado-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Decline_Dumbbell_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-declinado-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Decline_Dumbbell_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Decline_Dumbbell_Bench_Press"
+  },
+  {
+   "id": "supino-fechado",
+   "name_pt": "Supino fechado",
+   "name_pt_status": "a_revisar",
+   "name_en": "Close-Grip Barbell Bench Press",
+   "aliases": [
+    "supino pegada fechada",
+    "close grip bench"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [
+    "peito",
+    "ombros"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-fechado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Close-Grip_Barbell_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-fechado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Close-Grip_Barbell_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Close-Grip_Barbell_Bench_Press"
+  },
+  {
+   "id": "supino-inclinado-barra",
+   "name_pt": "Supino inclinado com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Incline Bench Press - Medium Grip",
+   "aliases": [
+    "supino inclinado barra",
+    "supino inclinado com barra"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Incline_Bench_Press_-_Medium_Grip"
+  },
+  {
+   "id": "supino-inclinado-halteres",
+   "name_pt": "Supino inclinado com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Incline Dumbbell Press",
+   "aliases": [
+    "supino inclinado halter",
+    "supino inclinado com halter"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Incline_Dumbbell_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Incline_Dumbbell_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Incline_Dumbbell_Press"
+  },
+  {
+   "id": "supino-inclinado-maquina",
+   "name_pt": "Supino inclinado na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Leverage Incline Chest Press",
+   "aliases": [
+    "chest press inclinado",
+    "peitoral inclinado máquina"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Leverage_Incline_Chest_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Leverage_Incline_Chest_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Leverage_Incline_Chest_Press"
+  },
+  {
+   "id": "supino-inclinado-smith",
+   "name_pt": "Supino inclinado no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Incline Bench Press",
+   "aliases": [
+    "supino inclinado smith",
+    "supino inclinado guiado"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Incline_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-inclinado-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Incline_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Incline_Bench_Press"
+  },
+  {
+   "id": "supino-maquina",
+   "name_pt": "Supino na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Machine Bench Press",
+   "aliases": [
+    "chest press",
+    "supino maquina",
+    "peitoral na máquina",
+    "supino sentado"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Machine_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Machine_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Machine_Bench_Press"
+  },
+  {
+   "id": "supino-polia",
+   "name_pt": "Supino na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Chest Press",
+   "aliases": [
+    "press peitoral polia",
+    "supino cabo"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Chest_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Chest_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Chest_Press"
+  },
+  {
+   "id": "supino-reto-barra",
+   "name_pt": "Supino reto com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Barbell Bench Press - Medium Grip",
+   "aliases": [
+    "supino reto",
+    "supino barra",
+    "supino plano",
+    "supino"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "barra",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-reto-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Barbell_Bench_Press_-_Medium_Grip/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-reto-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Barbell_Bench_Press_-_Medium_Grip/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Barbell_Bench_Press_-_Medium_Grip"
+  },
+  {
+   "id": "supino-reto-halteres",
+   "name_pt": "Supino reto com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Dumbbell Bench Press",
+   "aliases": [
+    "supino com halteres",
+    "supino reto halter",
+    "supino halteres"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-reto-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Dumbbell_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-reto-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Dumbbell_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Dumbbell_Bench_Press"
+  },
+  {
+   "id": "supino-reto-smith",
+   "name_pt": "Supino reto no Smith",
+   "name_pt_status": "a_revisar",
+   "name_en": "Smith Machine Bench Press",
+   "aliases": [
+    "supino smith",
+    "supino guiado",
+    "supino no smith"
+   ],
+   "muscle_primary": "peito",
+   "muscle_secondary": [
+    "ombros",
+    "tríceps"
+   ],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/supino-reto-smith/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Smith_Machine_Bench_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/supino-reto-smith/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Smith_Machine_Bench_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Smith_Machine_Bench_Press"
+  },
+  {
+   "id": "triceps-coice-halter",
+   "name_pt": "Tríceps coice com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "Tricep Dumbbell Kickback",
+   "aliases": [
+    "coice",
+    "kickback tríceps",
+    "tríceps coice"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-coice-halter/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Tricep_Dumbbell_Kickback/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-coice-halter/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Tricep_Dumbbell_Kickback/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Tricep_Dumbbell_Kickback"
+  },
+  {
+   "id": "triceps-frances-halter",
+   "name_pt": "Tríceps francês com halter",
+   "name_pt_status": "a_revisar",
+   "name_en": "Standing Dumbbell Triceps Extension",
+   "aliases": [
+    "tríceps francês",
+    "francês halter",
+    "tríceps francês halter",
+    "extensão de tríceps halter"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-frances-halter/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Triceps_Extension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-frances-halter/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Standing_Dumbbell_Triceps_Extension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Standing_Dumbbell_Triceps_Extension"
+  },
+  {
+   "id": "triceps-frances-polia-corda",
+   "name_pt": "Tríceps francês na polia com corda",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable Rope Overhead Triceps Extension",
+   "aliases": [
+    "tríceps overhead corda",
+    "francês na polia",
+    "tríceps francês polia"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-frances-polia-corda/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_Rope_Overhead_Triceps_Extension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-frances-polia-corda/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_Rope_Overhead_Triceps_Extension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_Rope_Overhead_Triceps_Extension"
+  },
+  {
+   "id": "triceps-frances-sentado",
+   "name_pt": "Tríceps francês sentado",
+   "name_pt_status": "a_revisar",
+   "name_en": "Seated Triceps Press",
+   "aliases": [
+    "francês sentado"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-frances-sentado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Seated_Triceps_Press/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-frances-sentado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Seated_Triceps_Press/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Seated_Triceps_Press"
+  },
+  {
+   "id": "triceps-maquina",
+   "name_pt": "Tríceps na máquina",
+   "name_pt_status": "a_revisar",
+   "name_en": "Machine Triceps Extension",
+   "aliases": [
+    "extensão tríceps máquina"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "máquina",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-maquina/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Machine_Triceps_Extension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-maquina/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Machine_Triceps_Extension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Machine_Triceps_Extension"
+  },
+  {
+   "id": "triceps-polia-barra",
+   "name_pt": "Tríceps na polia com barra",
+   "name_pt_status": "a_revisar",
+   "name_en": "Triceps Pushdown",
+   "aliases": [
+    "tríceps polia",
+    "triceps polia",
+    "tríceps pushdown",
+    "tríceps pulley",
+    "tríceps barra reta polia"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-polia-barra/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Triceps_Pushdown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-polia-barra/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Triceps_Pushdown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Triceps_Pushdown"
+  },
+  {
+   "id": "triceps-polia-barra-v",
+   "name_pt": "Tríceps na polia com barra V",
+   "name_pt_status": "a_revisar",
+   "name_en": "Triceps Pushdown - V-Bar Attachment",
+   "aliases": [
+    "tríceps barra v",
+    "tríceps triângulo"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-polia-barra-v/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Triceps_Pushdown_-_V-Bar_Attachment/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-polia-barra-v/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Triceps_Pushdown_-_V-Bar_Attachment/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Triceps_Pushdown_-_V-Bar_Attachment"
+  },
+  {
+   "id": "triceps-polia-corda",
+   "name_pt": "Tríceps na polia com corda",
+   "name_pt_status": "a_revisar",
+   "name_en": "Triceps Pushdown - Rope Attachment",
+   "aliases": [
+    "tríceps corda",
+    "pushdown corda"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-polia-corda/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Triceps_Pushdown_-_Rope_Attachment/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-polia-corda/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Triceps_Pushdown_-_Rope_Attachment/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Triceps_Pushdown_-_Rope_Attachment"
+  },
+  {
+   "id": "triceps-polia-supinado",
+   "name_pt": "Tríceps na polia pegada supinada",
+   "name_pt_status": "a_revisar",
+   "name_en": "Reverse Grip Triceps Pushdown",
+   "aliases": [
+    "tríceps invertido polia"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-polia-supinado/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Reverse_Grip_Triceps_Pushdown/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-polia-supinado/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Reverse_Grip_Triceps_Pushdown/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Reverse_Grip_Triceps_Pushdown"
+  },
+  {
+   "id": "triceps-testa-barra-w",
+   "name_pt": "Tríceps testa com barra W",
+   "name_pt_status": "a_revisar",
+   "name_en": "EZ-Bar Skullcrusher",
+   "aliases": [
+    "tríceps testa",
+    "skull crusher",
+    "skullcrusher",
+    "francês deitado"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [
+    "antebraço"
+   ],
+   "equipment": "barra W",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-testa-barra-w/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/EZ-Bar_Skullcrusher/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-testa-barra-w/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/EZ-Bar_Skullcrusher/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "EZ-Bar_Skullcrusher"
+  },
+  {
+   "id": "triceps-testa-halteres",
+   "name_pt": "Tríceps testa com halteres",
+   "name_pt_status": "a_revisar",
+   "name_en": "Lying Dumbbell Tricep Extension",
+   "aliases": [
+    "tríceps testa halteres"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [
+    "peito",
+    "ombros"
+   ],
+   "equipment": "halteres",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-testa-halteres/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Lying_Dumbbell_Tricep_Extension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-testa-halteres/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Lying_Dumbbell_Tricep_Extension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Lying_Dumbbell_Tricep_Extension"
+  },
+  {
+   "id": "triceps-unilateral-polia",
+   "name_pt": "Tríceps unilateral na polia",
+   "name_pt_status": "a_revisar",
+   "name_en": "Cable One Arm Tricep Extension",
+   "aliases": [
+    "tríceps um braço polia"
+   ],
+   "muscle_primary": "tríceps",
+   "muscle_secondary": [],
+   "equipment": "polia",
+   "category": "força",
+   "media": [
+    {
+     "type": "image",
+     "url": "media/triceps-unilateral-polia/0.webp",
+     "sort_order": 0,
+     "source": "free-exercise-db · exercises/Cable_One_Arm_Tricep_Extension/0.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    },
+    {
+     "type": "image",
+     "url": "media/triceps-unilateral-polia/1.webp",
+     "sort_order": 1,
+     "source": "free-exercise-db · exercises/Cable_One_Arm_Tricep_Extension/1.jpg",
+     "license": "Unlicense (domínio público)",
+     "attribution": "free-exercise-db — https://github.com/yuhonas/free-exercise-db (recomprimida: WebP, máx. 600px)"
+    }
+   ],
+   "custom": false,
+   "source_id": "Cable_One_Arm_Tricep_Extension"
+  }
+ ]
+}

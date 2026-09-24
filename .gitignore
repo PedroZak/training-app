@@ -1,0 +1,5 @@
+# Dados pessoais e artefatos locais — NUNCA commitar (repo público no Pages)
+local/
+backups/
+*.backup.json
+backup-treino-*.json
