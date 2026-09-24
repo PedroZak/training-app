@@ -289,3 +289,28 @@ button { font-family: inherit; }
 .modal-card h2 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
 .modal-card p { font-size: 14px; line-height: 1.45; margin-bottom: 10px; }
 .field-row input:disabled { opacity: 0.7; }
+
+/* Guia de execução (sanfona na célula do exercício) */
+.ex-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.ex-head .ex-name { flex: 1; min-width: 0; }
+.ex-chevron {
+  flex: none; width: 36px; height: 36px; margin: -6px -4px 0 0; border: none; border-radius: 10px;
+  background: var(--surface-2); color: var(--text-dim); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.ex-chevron svg { transition: transform 0.2s ease; }
+.ex-chevron[aria-expanded="true"] { color: var(--text); }
+.ex-chevron[aria-expanded="true"] svg { transform: rotate(180deg); }
+.ex-media { margin: 8px 0 6px; }
+.media-frame { position: relative; aspect-ratio: 3 / 2; background: var(--surface-2); border-radius: 12px; overflow: hidden; }
+.media-frame img, .media-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.media-loop img { opacity: 0; animation: var(--kf) var(--dur) steps(1, end) infinite; animation-delay: calc(var(--i) * 0.8s); }
+@keyframes mediaLoop2 { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes mediaLoop3 { 0% { opacity: 1; } 33.334% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes mediaLoop4 { 0% { opacity: 1; } 25% { opacity: 0; } 100% { opacity: 0; } }
+.media-cap { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+.media-fallback { background: var(--surface-2); border-radius: 12px; padding: 14px; font-size: 12.5px; color: var(--text-dim); text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+  .media-loop { aspect-ratio: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: none; overflow: visible; }
+  .media-loop img { position: static; opacity: 1; animation: none; border-radius: 10px; aspect-ratio: 3 / 2; }
+}

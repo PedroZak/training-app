@@ -31,6 +31,7 @@ function boot() {
   wireSettingsView();
   wireExportView();
   wireMigration();
+  wireMediaFallback();
   renderAll();
   setInterval(tickTimerDisplay, 1000);
   initCatalog();
@@ -217,11 +218,17 @@ function renderExerciseRow(e, mesoKey, interactive) {
   const target = e.reps[mesoKey];
   const numericWeight = parseFloat(String(e.weight).replace(',', '.'));
   const isPR = interactive && e.bestWeight != null && Number.isFinite(numericWeight) && numericWeight === e.bestWeight && e.bestWeight > 0;
+  const cat = interactive && e.exerciseId ? Catalog.get(e.exerciseId) : null;
+  const mediaOpen = !!cat && expandedMedia.has(e.id);
   return `
     <div class="exercise-row ${done ? 'done' : ''}" data-ex="${e.id}">
       ${interactive ? `<button class="ex-check" data-check="${e.id}">${done ? '✓' : ''}</button>` : '<span style="width:28px"></span>'}
       <div class="ex-body">
-        <div class="ex-name">${escapeHtml(Catalog.name(e))}${e.isNew ? '<span class="ex-new-badge">NOVO</span>' : ''}${isPR ? '<span class="pr-badge">🏆 PR</span>' : ''}</div>
+        <div class="ex-head">
+          <div class="ex-name">${escapeHtml(Catalog.name(e))}${e.isNew ? '<span class="ex-new-badge">NOVO</span>' : ''}${isPR ? '<span class="pr-badge">🏆 PR</span>' : ''}</div>
+          ${cat ? `<button type="button" class="ex-chevron" data-media-toggle="${e.id}" aria-expanded="${mediaOpen}" aria-controls="media-${e.id}" aria-label="Ver execução de ${escapeHtml(cat.name_pt)}"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>` : ''}
+        </div>
+        ${mediaOpen ? mediaPanelHTML(e.id, cat) : ''}
         <div class="ex-meta">${escapeHtml(e.grip)} · ${e.sets}x</div>
         <div class="ex-target tnum">${escapeHtml(target)} reps <span class="rest-tag">· descanso ${escapeHtml(e.rest)}</span></div>
         ${e.notes ? `<div class="ex-notes">${escapeHtml(e.notes)}</div>` : ''}
@@ -245,6 +252,9 @@ function wireWorkoutCardEvents(root, interactive) {
   if (!interactive) return;
   root.querySelectorAll('[data-check]').forEach((btn) => {
     btn.addEventListener('click', () => toggleCheck(btn.dataset.check));
+  });
+  root.querySelectorAll('[data-media-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => toggleMedia(btn));
   });
   root.querySelectorAll('[data-weight-input]').forEach((inp) => {
     inp.addEventListener('change', () => saveWeight(inp.dataset.weightInput, inp.value));
@@ -716,6 +726,60 @@ function wireExportView() {
     if (e.target.files[0]) importBackupJSON(e.target.files[0]);
     e.target.value = '';
   });
+}
+
+// ---------------------------------------------------------------------------
+// GUIA DE EXECUÇÃO: seta na célula do exercício (mídia só é criada/baixada ao abrir)
+// ---------------------------------------------------------------------------
+const expandedMedia = new Set(); // ids de exercício com o painel aberto (só na sessão)
+const MEDIA_STEP_S = 0.8;        // tempo de cada foto no loop
+const MEDIA_FALLBACK = (msg) => `<div class="media-fallback">${msg}</div>`;
+
+function mediaPanelHTML(exId, cat) {
+  const media = [...(cat.media || [])].sort((a, b) => a.sort_order - b.sort_order);
+  const video = media.find((m) => m.type === 'video');
+  const gif = media.find((m) => m.type === 'gif');
+  const imgs = media.filter((m) => m.type === 'image').slice(0, 4);
+  const alt = escapeHtml(cat.name_pt);
+  let body;
+  if (video) {
+    body = `<div class="media-frame"><video controls playsinline preload="metadata" src="${escapeHtml(video.url)}" aria-label="${alt}"></video></div>`;
+  } else if (gif) {
+    body = `<div class="media-frame"><img src="${escapeHtml(gif.url)}" alt="${alt}" decoding="async"></div>`;
+  } else if (imgs.length === 1) {
+    body = `<div class="media-frame"><img src="${escapeHtml(imgs[0].url)}" alt="${alt}" decoding="async"></div>`;
+  } else if (imgs.length > 1) {
+    const n = imgs.length;
+    body = `<div class="media-frame media-loop" style="--kf:mediaLoop${n};--dur:${(n * MEDIA_STEP_S).toFixed(1)}s">` +
+      imgs.map((m, i) => `<img src="${escapeHtml(m.url)}" alt="${alt} — posição ${i + 1} de ${n}" decoding="async" style="--i:${i}">`).join('') + '</div>';
+  } else {
+    body = MEDIA_FALLBACK('Ainda não há foto ou vídeo para este exercício.');
+  }
+  const first = media[0];
+  const cap = [cat.muscle_primary, cat.equipment].filter(Boolean).map(escapeHtml).join(' · ') +
+    (first ? ` · fonte: ${escapeHtml(first.source.split(' · ')[0])}, ${escapeHtml(first.license)}` : '');
+  return `<div class="ex-media" id="media-${exId}">${body}<div class="media-cap">${cap}</div></div>`;
+}
+
+function toggleMedia(btn) {
+  const exId = btn.dataset.mediaToggle;
+  const ex = findExerciseById(exId);
+  const cat = ex && ex.exerciseId ? Catalog.get(ex.exerciseId) : null;
+  if (!cat) return;
+  const open = !expandedMedia.has(exId);
+  if (open) expandedMedia.add(exId); else expandedMedia.delete(exId);
+  btn.setAttribute('aria-expanded', String(open));
+  const row = btn.closest('.exercise-row');
+  row.querySelector('.ex-media')?.remove();
+  if (open) row.querySelector('.ex-head').insertAdjacentHTML('afterend', mediaPanelHTML(exId, cat));
+}
+
+function wireMediaFallback() {
+  // 'error' não borbulha: escuta na captura. Sem rede e sem cache -> mensagem em vez de imagem quebrada.
+  document.getElementById('home-view').addEventListener('error', (ev) => {
+    const frame = ev.target.closest && ev.target.closest('.media-frame');
+    if (frame) frame.outerHTML = MEDIA_FALLBACK('Não foi possível carregar a mídia agora. Depois de aberta uma vez com internet, ela fica disponível offline.');
+  }, true);
 }
 
 // ---------------------------------------------------------------------------
