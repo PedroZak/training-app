@@ -1,0 +1,41 @@
+name: Validar catálogo
+
+# Roda a cada commit em qualquer branch (e em PRs). Não mexe no deploy do GitHub Pages,
+# que continua sendo o "pages build and deployment" padrão (branch master).
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      # Regras: name_pt em todos; toda mídia com source e license; arquivos existentes e íntegros;
+      # ids únicos; aliases sem colisão; mapa de nomes apontando para ids válidos;
+      # nenhum backup/dado pessoal versionado. Também gera a lista de exercícios sem mídia.
+      - name: Validar catálogo
+        run: python tools/validate_catalog.py --summary "$GITHUB_STEP_SUMMARY" --csv exercicios-sem-midia.csv
+
+      - name: Testes do validador
+        if: ${{ !cancelled() }}
+        run: python tools/test_validate_catalog.py
+
+      - name: Guardar a lista de exercícios sem mídia
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: exercicios-sem-midia
+          path: exercicios-sem-midia.csv
+          if-no-files-found: ignore

@@ -3,3 +3,7 @@ local/
 backups/
 *.backup.json
 backup-treino-*.json
+
+# Python
+__pycache__/
+*.pyc

@@ -74,7 +74,7 @@
   {
    "id": "abdominal-maquina",
    "name_pt": "Abdominal na máquina",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Ab Crunch Machine",
    "aliases": [
     "crunch máquina",
@@ -110,7 +110,7 @@
   {
    "id": "abdominal-polia",
    "name_pt": "Abdominal na polia (ajoelhado)",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Cable Crunch",
    "aliases": [
     "abdominal supra polia",
@@ -492,7 +492,7 @@
   {
    "id": "agachamento-livre-barra",
    "name_pt": "Agachamento livre com barra",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Barbell Squat",
    "aliases": [
     "agachamento livre",
@@ -613,7 +613,7 @@
   {
    "id": "barra-fixa-pronada",
    "name_pt": "Barra fixa (pegada pronada)",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Pullups",
    "aliases": [
     "barra fixa",
@@ -808,7 +808,7 @@
   {
    "id": "cadeira-extensora",
    "name_pt": "Cadeira extensora",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Leg Extensions",
    "aliases": [
     "extensora",
@@ -988,7 +988,7 @@
   {
    "id": "crossover-polia-alta",
    "name_pt": "Crossover na polia alta",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Cable Crossover",
    "aliases": [
     "crossover",
@@ -1139,7 +1139,7 @@
   {
    "id": "crucifixo-invertido-maquina",
    "name_pt": "Crucifixo invertido na máquina",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Reverse Machine Flyes",
    "aliases": [
     "crucifixo invertido",
@@ -1359,7 +1359,7 @@
   {
    "id": "desenvolvimento-halteres-sentado",
    "name_pt": "Desenvolvimento com halteres sentado",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Seated Dumbbell Press",
    "aliases": [
     "desenvolvimento halteres",
@@ -1541,7 +1541,7 @@
   {
    "id": "elevacao-frontal-halteres",
    "name_pt": "Elevação frontal com halteres",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Front Dumbbell Raise",
    "aliases": [
     "elevação frontal",
@@ -1612,7 +1612,7 @@
   {
    "id": "elevacao-lateral-halteres",
    "name_pt": "Elevação lateral com halteres",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Side Lateral Raise",
    "aliases": [
     "elevação lateral",
@@ -1799,7 +1799,7 @@
   {
    "id": "encolhimento-halteres",
    "name_pt": "Encolhimento com halteres",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Dumbbell Shrug",
    "aliases": [
     "encolhimento halteres",
@@ -1945,7 +1945,7 @@
   {
    "id": "face-pull",
    "name_pt": "Face pull",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Face Pull",
    "aliases": [
     "face pull corda",
@@ -2130,7 +2130,7 @@
   {
    "id": "leg-press-45",
    "name_pt": "Leg press 45°",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Leg Press",
    "aliases": [
     "leg press",
@@ -2376,7 +2376,7 @@
   {
    "id": "mesa-flexora",
    "name_pt": "Mesa flexora",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Lying Leg Curls",
    "aliases": [
     "flexora deitada",
@@ -2559,7 +2559,7 @@
   {
    "id": "panturrilha-leg-press",
    "name_pt": "Panturrilha no Leg Press",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Calf Press On The Leg Press Machine",
    "aliases": [
     "panturrilha em pé",
@@ -2630,7 +2630,7 @@
   {
    "id": "panturrilha-sentado",
    "name_pt": "Panturrilha sentado",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Seated Calf Raise",
    "aliases": [
     "panturrilha sentada",
@@ -2666,7 +2666,7 @@
   {
    "id": "paralelas-peito",
    "name_pt": "Paralelas com foco em peito",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Dips - Chest Version",
    "aliases": [
     "paralelas",
@@ -2826,7 +2826,7 @@
   {
    "id": "peck-deck",
    "name_pt": "Peck deck (voador)",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Butterfly",
    "aliases": [
     "peck deck",
@@ -2975,7 +2975,7 @@
   {
    "id": "pulldown-corda",
    "name_pt": "Pulldown na corda (braços estendidos)",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Rope Straight-Arm Pulldown",
    "aliases": [
     "pulldown corda",
@@ -3091,7 +3091,7 @@
   {
    "id": "puxada-alta-aberta",
    "name_pt": "Puxada alta pegada aberta",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Wide-Grip Lat Pulldown",
    "aliases": [
     "puxada alta",
@@ -3551,7 +3551,7 @@
   {
    "id": "remada-curvada-barra",
    "name_pt": "Remada curvada com barra",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Bent Over Barbell Row",
    "aliases": [
     "remada curvada",
@@ -4158,7 +4158,7 @@
   {
    "id": "rosca-direta-barra-w",
    "name_pt": "Rosca direta com barra W",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "EZ-Bar Curl",
    "aliases": [
     "rosca w",
@@ -4268,7 +4268,7 @@
   {
    "id": "rosca-inclinada-halteres",
    "name_pt": "Rosca inclinada com halteres",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Incline Dumbbell Curl",
    "aliases": [
     "rosca inclinada",
@@ -4342,7 +4342,7 @@
   {
    "id": "rosca-martelo",
    "name_pt": "Rosca martelo com halteres",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Hammer Curls",
    "aliases": [
     "rosca martelo",
@@ -4623,7 +4623,7 @@
   {
    "id": "rotacao-tronco-polia",
    "name_pt": "Rotação de tronco na polia (lenhador)",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Standing Cable Wood Chop",
    "aliases": [
     "wood chop",
@@ -4772,7 +4772,7 @@
   {
    "id": "stiff-barra",
    "name_pt": "Stiff com barra",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Stiff-Legged Barbell Deadlift",
    "aliases": [
     "stiff",
@@ -5037,7 +5037,7 @@
   {
    "id": "supino-inclinado-halteres",
    "name_pt": "Supino inclinado com halteres",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Incline Dumbbell Press",
    "aliases": [
     "supino inclinado halter",
@@ -5229,7 +5229,7 @@
   {
    "id": "supino-reto-barra",
    "name_pt": "Supino reto com barra",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Barbell Bench Press - Medium Grip",
    "aliases": [
     "supino reto",
@@ -5383,7 +5383,7 @@
   {
    "id": "triceps-frances-halter",
    "name_pt": "Tríceps francês com halter",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Standing Dumbbell Triceps Extension",
    "aliases": [
     "tríceps francês",
@@ -5524,7 +5524,7 @@
   {
    "id": "triceps-polia-barra",
    "name_pt": "Tríceps na polia com barra",
-   "name_pt_status": "a_revisar",
+   "name_pt_status": "revisado",
    "name_en": "Triceps Pushdown",
    "aliases": [
     "tríceps polia",

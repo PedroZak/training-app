@@ -2,8 +2,14 @@
 """Monta exercises.json a partir de tools/curated.txt + free-exercise-db (Unlicense)
 e gera só as mídias dos exercícios curados em media/<id>/ (WebP, largura máx. 600px).
 
-Originais (JPG) ficam em local/cache/img/ (ignorado pelo git); media/ é regenerada do zero.
+Originais (JPG) ficam em local/cache/img/ (ignorado pelo git).
 Requer Pillow para converter:  python tools/build_catalog.py [--no-media]
+
+Suas próprias mídias e exercícios NÃO se perdem ao regenerar:
+  tools/own_media.json        {"id-do-exercicio": [{"type","url","source","license","attribution"}, ...]}
+                              os arquivos ficam em media/<id>/ (ex.: media/supino-reto-barra/meu-video.mp4)
+  tools/custom_exercises.json lista de exercícios que não existem no dataset (custom:true)
+A limpeza de media/ remove só o que o build gerou antes e não está listado em own_media.json.
 """
 import json, shutil, sys, urllib.request, concurrent.futures as cf
 from pathlib import Path
@@ -31,9 +37,38 @@ EQUIP_PT = {
 # Ajustes onde o dado do free-exercise-db não descreve bem o equipamento na academia BR
 EQUIP_OVERRIDE = {"paralelas-peito": "peso corporal", "extensao-lombar": "banco romano"}
 
-# Exercícios que NÃO existem no free-exercise-db (custom:true, por commit, sem mídia por enquanto).
-# Formato: {"id","name_pt","name_en","aliases":[],"muscle_primary","muscle_secondary":[],"equipment","category"}
-CUSTOM = []
+
+
+def load_json(name, default):
+    p = ROOT / "tools" / name
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
+
+
+def custom_exercises():
+    """Exercícios que NÃO existem no free-exercise-db (custom:true, por commit).
+    Formato: {"id","name_pt","name_en","aliases":[],"muscle_primary","muscle_secondary":[],"equipment","category"}"""
+    return load_json("custom_exercises.json", [])
+
+
+def apply_own_media(catalog):
+    """Acrescenta as mídias próprias (tools/own_media.json) depois das do dataset. Devolve os arquivos a preservar."""
+    keep, by_id = set(), {c["id"]: c for c in catalog}
+    for eid, entries in load_json("own_media.json", {}).items():
+        if eid not in by_id:
+            sys.exit(f"own_media.json: exercício inexistente: {eid}")
+        c = by_id[eid]
+        nxt = max((m["sort_order"] for m in c["media"]), default=-1) + 1
+        for i, m in enumerate(entries):
+            f = (ROOT / m["url"]).resolve()
+            if not m["url"].startswith("media/") or not f.is_file():
+                sys.exit(f"own_media.json: arquivo inexistente ou fora de media/: {m['url']}")
+            for k in ("type", "source", "license"):
+                if not str(m.get(k) or "").strip():
+                    sys.exit(f"own_media.json: {eid} / {m['url']}: '{k}' obrigatório")
+            c["media"].append({"type": m["type"], "url": m["url"], "sort_order": nxt + i, "source": m["source"],
+                               "license": m["license"], "attribution": m.get("attribution", "")})
+            keep.add(f)
+    return keep
 
 
 def fetch_db():
@@ -87,8 +122,17 @@ def make_thumb(job):
     return dest
 
 
+def reviewed_ids():
+    """Ids do exercise-map.json = exercícios do seu treino, cujos nomes você já revisou e aprovou."""
+    p = ROOT / "exercise-map.json"
+    if not p.exists():
+        return set()
+    return set(json.loads(p.read_text(encoding="utf-8"))["map"].values())
+
+
 def main():
     no_media = "--no-media" in sys.argv
+    reviewed = reviewed_ids()
     db = fetch_db()
     catalog, jobs, thumb_jobs, seen = [], [], [], set()
     for fed_id, slug, name_pt, aliases in parse_curated():
@@ -113,7 +157,7 @@ def main():
         catalog.append({
             "id": slug,
             "name_pt": name_pt,
-            "name_pt_status": "a_revisar",
+            "name_pt_status": "revisado" if slug in reviewed else "a_revisar",
             "name_en": e["name"],
             "aliases": aliases,
             "muscle_primary": MUSCLE_PT[e["primaryMuscles"][0]],
@@ -125,10 +169,11 @@ def main():
             "custom": False,
             "source_id": fed_id,
         })
-    for c in CUSTOM:
+    for c in custom_exercises():
         if c["id"] in seen:
             sys.exit(f"slug duplicado: {c['id']}")
         catalog.append({**c, "name_pt_status": "a_revisar", "thumb": None, "media": [], "custom": True, "source_id": None})
+    keep = apply_own_media(catalog)
     catalog.sort(key=lambda x: x["name_pt"].lower())
 
     out = ROOT / "exercises.json"
@@ -136,7 +181,15 @@ def main():
     print(f"exercises.json: {len(catalog)} exercícios ({sum(1 for c in catalog if c['custom'])} custom)")
 
     if not no_media:
-        shutil.rmtree(ROOT / "media", ignore_errors=True)  # gerada: recria do zero, sem sobras
+        # limpeza sem sobras, preservando as mídias próprias listadas em own_media.json
+        gerados = {j[2].resolve() for j in jobs} | {t[1].resolve() for t in thumb_jobs}
+        if (ROOT / "media").is_dir():
+            for f in list((ROOT / "media").rglob("*")):
+                if f.is_file() and f.resolve() not in keep and f.resolve() not in gerados:
+                    f.unlink()
+            for d in sorted((ROOT / "media").rglob("*"), reverse=True):
+                if d.is_dir() and not any(d.iterdir()):
+                    d.rmdir()
         with cf.ThreadPoolExecutor(8) as ex:
             done = list(ex.map(process, jobs))
         total = sum(d.stat().st_size for d in done)
