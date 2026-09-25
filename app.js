@@ -3,11 +3,19 @@
 let state; // atalho para Store.data
 const WEEKDAY_NAMES = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 const WEEKDAY_SHORT = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
-const WORKOUT_IDS = ['A', 'B', 'C', 'D'];
 
 let editorWorkoutId = null; // qual treino está aberto no editor (Treinos tab)
 let calCursor = new Date(); // mês visível no calendário
 let calSelectedDate = null;
+
+// Treinos são dinâmicos: a ordem fica em state.workoutOrder; arquivados somem das abas mas mantêm o histórico.
+function allWorkoutIds() { return state.workoutOrder.filter((id) => state.workouts[id]); }
+function activeWorkoutIds() { return allWorkoutIds().filter((id) => !state.workouts[id].archived); }
+
+// Tela atual sobrevive ao "puxar para atualizar" (recarrega a página): guardada só na sessão.
+const UI_KEY = 'training-app:ui';
+function readUI() { try { return JSON.parse(sessionStorage.getItem(UI_KEY) || '{}'); } catch (e) { return {}; } }
+function saveUI(patch) { try { sessionStorage.setItem(UI_KEY, JSON.stringify({ ...readUI(), ...patch })); } catch (e) { /* sem sessionStorage */ } }
 
 // ---------------------------------------------------------------------------
 // Boot
@@ -17,16 +25,23 @@ function boot() {
   state = Store.data;
   Catalog.setCustom(state.customExercises);
 
-  // vira o dia: se a data salva em "today" é de ontem, reseta o checklist
+  // vira o dia: reseta o checklist. Sem agenda fixa, nenhum treino vem pré-selecionado.
   if (state.today.date !== todayISO()) {
-    const sched = todaySchedule();
-    state.today = {
-      date: todayISO(),
-      workoutId: sched.type === 'workout' ? sched.id : state.today.workoutId,
-      checked: [],
-    };
+    state.today = { date: todayISO(), workoutId: null, checked: [] };
     Store.save();
   }
+  const sel = state.workouts[state.today.workoutId];
+  if (state.today.workoutId && (!sel || sel.archived)) {
+    state.today.workoutId = null;
+    state.today.checked = [];
+    Store.save();
+  }
+
+  // restaura a tela em que o usuário estava (puxar para atualizar não pode voltar para a Home)
+  const ui = readUI();
+  if (ui.editorWorkoutId) editorWorkoutId = ui.editorWorkoutId;
+  if (/^\d{4}-\d{2}$/.test(ui.cal || '')) calCursor = new Date(Number(ui.cal.slice(0, 4)), Number(ui.cal.slice(5)) - 1, 1);
+  if (ui.calSelectedDate) calSelectedDate = ui.calSelectedDate;
 
   wireNav();
   wireSettingsView();
@@ -35,6 +50,7 @@ function boot() {
   wireMediaFallback();
   wirePicker();
   renderAll();
+  if (['workouts', 'calendar', 'settings'].includes(ui.view)) switchView(ui.view);
   setInterval(tickTimerDisplay, 1000);
   initCatalog();
 
@@ -62,6 +78,7 @@ function wireNav() {
 function switchView(name) {
   document.querySelectorAll('.view').forEach((v) => (v.hidden = v.dataset.view !== name));
   document.querySelectorAll('.nav-btn').forEach((b) => b.classList.toggle('active', b.dataset.view === name));
+  saveUI({ view: name });
   window.scrollTo({ top: 0 });
 }
 
@@ -101,10 +118,9 @@ function showToast(msg) {
 function renderHome() {
   const wrap = document.getElementById('home-view');
   const info = currentWeekInfo(state.settings);
-  const sched = todaySchedule();
   const dow = new Date().getDay();
 
-  const wkButtons = WORKOUT_IDS.map((id) => {
+  const wkButtons = activeWorkoutIds().map((id) => {
     const w = state.workouts[id];
     const active = state.today.workoutId === id;
     return `<button class="wk-btn ${active ? 'active' : ''}" style="--wk-color:${w.color}" data-pick="${id}">
@@ -114,18 +130,13 @@ function renderHome() {
 
   const mesoColor = info.isDeload ? DELOAD_COLOR : MESO_COLORS[info.mesoKey];
 
-  let cardioNote = '';
-  if (sched.type === 'cardio') {
-    const done = isCardioDoneToday();
-    cardioNote = `
-      <div class="card">
-        <b>🏃 Dia de cardio</b>
-        <div class="ex-meta" style="margin-top:4px">${escapeHtml(CARDIO_INFO[info.mesoKey])}</div>
-        <button class="btn-primary" id="cardio-toggle-btn" style="margin-top:10px;${done ? 'opacity:0.6' : ''}">
-          ${done ? '✓ Cardio feito hoje' : 'Marcar cardio como feito'}
-        </button>
+  // cardio disponível todos os dias: marca como feito quando quiser (um registro por dia)
+  const cardioDone = isCardioDoneToday();
+  const cardioNote = `
+      <div class="card cardio-card">
+        <div><b>🏃 Cardio</b><div class="ex-meta" style="margin-top:2px">${escapeHtml(CARDIO_INFO[info.mesoKey])}</div></div>
+        <button type="button" class="${cardioDone ? 'btn-secondary cardio-done' : 'btn-primary cardio-btn'}" id="cardio-toggle-btn">${cardioDone ? '✓ Feito hoje' : 'Marcar como feito'}</button>
       </div>`;
-  }
 
   const header = `
     <div class="card meso-banner" style="--meso-color:${mesoColor}">
@@ -136,7 +147,7 @@ function renderHome() {
       <span class="pill" style="background:${mesoColor}29;color:${mesoColor}">${info.isDeload ? 'Deload · -40%' : info.mesoKey}</span>
     </div>
     <div class="card">
-      <div class="ex-meta">${WEEKDAY_NAMES[dow]} · agenda: ${sched.type === 'workout' ? 'Treino ' + sched.id : sched.label}</div>
+      <div class="ex-meta">${WEEKDAY_NAMES[dow]}, ${formatDatePt(state.today.date).slice(0, 5)} · escolha o treino de hoje</div>
       <div class="today-pick">${wkButtons}</div>
     </div>
     ${cardioNote}
@@ -173,7 +184,9 @@ function renderWorkoutCard(workout, mesoKey, interactive) {
   const total = workout.exercises.length;
   const doneCount = interactive ? workout.exercises.filter((e) => state.today.checked.includes(e.id)).length : 0;
 
-  const rows = workout.exercises.map((e) => renderExerciseRow(e, mesoKey, interactive)).join('');
+  const rows = workout.exercises.length
+    ? workout.exercises.map((e) => renderExerciseRow(e, mesoKey, interactive)).join('')
+    : '<div class="empty-state">Este treino ainda não tem exercícios. Adicione na aba Treinos.</div>';
 
   const finishBtn = interactive
     ? `<div class="finish-bar"><button class="btn-primary" id="finish-btn" ${doneCount === 0 ? 'disabled' : ''}>Concluir treino (${doneCount}/${total})</button></div>`
@@ -280,12 +293,60 @@ function wireWorkoutCardEvents(root, interactive) {
   if (finishBtn) finishBtn.addEventListener('click', finishWorkout);
 }
 
-function findExerciseById(exId) {
-  for (const id of WORKOUT_IDS) {
-    const found = state.workouts[id].exercises.find((e) => e.id === exId);
-    if (found) return found;
+// Todas as células conhecidas: as dos treinos + as trocadas/removidas (para o calendário resolver nomes antigos).
+function allCells() { return [...Object.values(state.workouts).flatMap((w) => w.exercises), ...state.retiredExercises]; }
+function findExerciseById(exId) { return allCells().find((e) => e.id === exId) || null; }
+
+function hasWeight(ex) { return String(ex.weight ?? '').trim() !== ''; }
+
+// Guarda a última carga/recorde por exercício do catálogo: quando ele voltar a um treino, a carga volta junto.
+function rememberWeight(ex) {
+  if (!ex || !ex.exerciseId) return;
+  if (!hasWeight(ex) && ex.bestWeight == null) return;
+  const prev = state.weightMemory[ex.exerciseId];
+  const bests = [ex.bestWeight, prev && prev.bestWeight].filter((n) => Number.isFinite(n));
+  state.weightMemory[ex.exerciseId] = {
+    weight: hasWeight(ex) ? ex.weight : (prev ? prev.weight : ''),
+    bestWeight: bests.length ? Math.max(...bests) : null,
+    weightUpdatedAt: ex.weightUpdatedAt || (prev && prev.weightUpdatedAt) || null,
+  };
+}
+
+// Preenche a memória com as cargas que já existem nas células vinculadas (sem sobrescrever entradas existentes).
+function seedWeightMemory() {
+  let n = 0;
+  for (const e of allCells()) {
+    if (!e.exerciseId || state.weightMemory[e.exerciseId]) continue;
+    if (!hasWeight(e) && e.bestWeight == null) continue;
+    rememberWeight(e);
+    n++;
   }
-  return null;
+  if (n) Store.save();
+}
+
+function applyMemory(cell, mem) {
+  cell.weight = mem.weight ?? '';
+  cell.bestWeight = mem.bestWeight ?? null;
+  cell.weightUpdatedAt = mem.weightUpdatedAt ?? null;
+}
+
+// Nova célula de treino para um exercício do catálogo; `from` (opcional) herda séries/reps/descanso/notas da célula trocada.
+function newCell(cat, from) {
+  return {
+    id: uid('ex'), exerciseId: cat.id, name: cat.name_pt,
+    grip: from ? from.grip : '—', sets: from ? from.sets : 3,
+    reps: from ? { ...from.reps } : { M1: '10-12', M2: '8-10', M3: '6-8' },
+    rest: from ? from.rest : '60-90s', restSec: from ? from.restSec : 75,
+    notes: from ? from.notes : '', isNew: from ? from.isNew : true,
+    weight: '', weightUpdatedAt: null, bestWeight: null,
+  };
+}
+
+// Tira a célula do treino sem perder nada: a carga vai para a memória e a célula fica em retiredExercises (histórico).
+function retireCell(w, cell, reason, replacedBy) {
+  rememberWeight(cell);
+  w.exercises = w.exercises.filter((x) => x.id !== cell.id);
+  state.retiredExercises.push({ ...cell, retiredAt: todayISO(), retiredFrom: w.id, retiredReason: reason, replacedBy: replacedBy || null });
 }
 
 function toggleCheck(exId) {
@@ -315,6 +376,7 @@ function saveWeight(exId, value) {
       showToast(`🏆 Novo recorde em ${Catalog.name(ex)}: ${numeric}kg!`);
     }
   }
+  rememberWeight(ex);
   Store.save();
   renderHome();
 }
@@ -431,12 +493,29 @@ function beep() {
 // ---------------------------------------------------------------------------
 function renderWorkoutsTab() {
   const wrap = document.getElementById('workouts-view');
-  if (!editorWorkoutId) editorWorkoutId = 'A';
-  const tabs = WORKOUT_IDS.map((id) => `<button class="tab-btn ${editorWorkoutId === id ? 'active' : ''}" style="--tab-color:${state.workouts[id].color}" data-tab="${id}">${id}</button>`).join('');
+  const active = activeWorkoutIds();
+  if (!editorWorkoutId || !active.includes(editorWorkoutId)) editorWorkoutId = active[0] || null;
+  const archived = allWorkoutIds().filter((id) => state.workouts[id].archived);
+  const tabs = active.map((id) => `<button class="tab-btn ${editorWorkoutId === id ? 'active' : ''}" style="--tab-color:${state.workouts[id].color}" data-tab="${id}">${id}</button>`).join('')
+    + '<button type="button" class="tab-btn tab-add" id="add-workout-btn" aria-label="Criar novo treino">＋ Novo</button>';
+  const archivedCard = archived.length ? `
+    <div class="card" style="margin-top:16px">
+      <h2 style="font-size:16px;margin-bottom:4px">Treinos arquivados</h2>
+      <p class="ex-meta" style="margin-bottom:6px">Ficam fora das abas e da tela Hoje; o histórico e as cargas continuam guardados.</p>
+      ${archived.map((id) => {
+        const a = state.workouts[id];
+        return `<div class="archive-row"><div><div class="archive-name">${escapeHtml(a.name)} <span class="ex-meta">(${id})</span></div><div class="ex-meta">${escapeHtml(a.subtitle || 'sem subtítulo')} · ${a.exercises.length} exercício${a.exercises.length === 1 ? '' : 's'} · último: ${daysAgoLabel(a.lastPerformedAt)}</div></div><button type="button" class="btn-secondary" data-reactivate="${id}">Reativar</button></div>`;
+      }).join('')}
+    </div>` : '';
+
+  if (!editorWorkoutId) {
+    wrap.innerHTML = `<div class="tabs">${tabs}</div><div class="card empty-state">Nenhum treino ativo. Crie um novo ou reative um arquivado.</div>${archivedCard}`;
+    wireWorkoutsTop(wrap);
+    return;
+  }
 
   const w = state.workouts[editorWorkoutId];
   const info = currentWeekInfo(state.settings);
-
   const exCards = w.exercises.map((e, i) => renderEditorExercise(e, i, w.exercises.length)).join('');
 
   wrap.innerHTML = `
@@ -457,20 +536,76 @@ function renderWorkoutsTab() {
     </div>
     <div id="editor-exercises">${exCards}</div>
     <button class="add-ex-btn" id="add-ex-btn">+ adicionar exercício</button>
+    <button type="button" class="btn-secondary" id="archive-workout-btn" style="width:100%;margin-top:14px" ${active.length <= 1 ? 'disabled' : ''}>Arquivar este treino</button>
+    ${active.length <= 1 ? '<p class="ex-meta" style="text-align:center;margin-top:6px">É preciso manter ao menos um treino ativo.</p>' : ''}
+    ${archivedCard}
     <div style="height:16px"></div>
     <div class="ex-meta" style="text-align:center">Mesociclo atual em destaque: ${info.mesoKey}</div>
   `;
 
-  wrap.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => { editorWorkoutId = b.dataset.tab; renderWorkoutsTab(); }));
-
+  wireWorkoutsTop(wrap);
   document.getElementById('w-name').addEventListener('change', (e) => { w.name = e.target.value; Store.save(); renderAll(); });
   document.getElementById('w-subtitle').addEventListener('change', (e) => { w.subtitle = e.target.value; Store.save(); renderAll(); });
   document.getElementById('w-warmup').addEventListener('change', (e) => { w.warmup = e.target.value; Store.save(); renderAll(); });
-
+  document.getElementById('archive-workout-btn').addEventListener('click', () => archiveWorkout(w.id));
   wireEditorEvents(w);
 }
 
+function wireWorkoutsTop(wrap) {
+  wrap.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => {
+    editorWorkoutId = b.dataset.tab;
+    saveUI({ editorWorkoutId });
+    renderWorkoutsTab();
+  }));
+  const add = wrap.querySelector('#add-workout-btn');
+  if (add) add.addEventListener('click', addWorkout);
+  wrap.querySelectorAll('[data-reactivate]').forEach((b) => b.addEventListener('click', () => reactivateWorkout(b.dataset.reactivate)));
+}
+
+const WORKOUT_COLORS = ['#3b82f6', '#ef4444', '#f97316', '#eab308', '#8b5cf6', '#14b8a6', '#ec4899', '#84cc16', '#06b6d4', '#f43f5e'];
+
+function addWorkout() {
+  const used = new Set(Object.keys(state.workouts));
+  let id = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').find((l) => !used.has(l));
+  if (!id) { let n = 1; while (used.has('T' + n)) n++; id = 'T' + n; }
+  const inUse = new Set(Object.values(state.workouts).map((x) => x.color)); // evita repetir cor, mesmo de arquivados
+  const color = WORKOUT_COLORS.find((c) => !inUse.has(c)) || WORKOUT_COLORS[used.size % WORKOUT_COLORS.length];
+  state.workouts[id] = { id, name: `Treino ${id}`, subtitle: '', color, warmup: '', lastPerformedAt: null, archived: false, exercises: [] };
+  state.workoutOrder.push(id);
+  editorWorkoutId = id;
+  saveUI({ editorWorkoutId });
+  Store.save();
+  renderAll();
+  showToast(`Treino ${id} criado. Adicione os exercícios abaixo.`);
+}
+
+function archiveWorkout(id) {
+  const w = state.workouts[id];
+  if (!w || activeWorkoutIds().length <= 1) return;
+  if (!confirm(`Arquivar “${w.name}”? Ele some das abas e da tela Hoje, mas o histórico e as cargas ficam guardados. Você pode reativar em “Treinos arquivados”.`)) return;
+  w.archived = true;
+  if (state.today.workoutId === id) { state.today.workoutId = null; state.today.checked = []; }
+  editorWorkoutId = activeWorkoutIds()[0];
+  saveUI({ editorWorkoutId });
+  Store.save();
+  renderAll();
+  showToast(`“${w.name}” arquivado.`);
+}
+
+function reactivateWorkout(id) {
+  const w = state.workouts[id];
+  if (!w) return;
+  w.archived = false;
+  editorWorkoutId = id;
+  saveUI({ editorWorkoutId });
+  Store.save();
+  renderAll();
+  showToast(`“${w.name}” reativado.`);
+}
+
 function renderEditorExercise(e, index, total) {
+  const cat = e.exerciseId ? Catalog.get(e.exerciseId) : null;
+  const tag = cat ? (cat.custom ? ' (personalizado)' : ' (do catálogo)') : ' (sem vínculo)';
   return `
     <div class="editor-ex-card" data-ex-edit="${e.id}">
       <div class="editor-ex-head">
@@ -481,7 +616,12 @@ function renderEditorExercise(e, index, total) {
           <button class="icon-btn btn-danger" data-del>✕</button>
         </div>
       </div>
-      <div class="field-row"><label>Nome${e.exerciseId ? (String(e.exerciseId).startsWith('custom-') ? ' (personalizado)' : ' (do catálogo · ' + escapeHtml(e.exerciseId) + ')') : ''}</label><input type="text" data-f="name" value="${escapeHtml(Catalog.name(e))}" ${e.exerciseId && Catalog.get(e.exerciseId) && !Catalog.get(e.exerciseId).custom ? 'disabled' : ''}></div>
+      <div class="field-row"><label>Exercício${tag}</label>
+        <div class="name-row">
+          <button type="button" class="name-picker" data-replace="${e.id}" aria-label="Trocar exercício ${escapeHtml(Catalog.name(e))}"><span>${escapeHtml(Catalog.name(e))}</span><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          ${cat && cat.custom ? `<button type="button" class="icon-btn" data-rename-custom="${e.id}" aria-label="Renomear exercício personalizado" style="width:44px;height:auto">✎</button>` : ''}
+        </div>
+      </div>
       <div class="field-grid">
         <div class="field-row"><label>Pegada</label><input type="text" data-f="grip" value="${escapeHtml(e.grip)}"></div>
         <div class="field-row"><label>Séries</label><input type="number" data-f="sets" value="${e.sets}"></div>
@@ -509,26 +649,36 @@ function wireEditorEvents(w) {
 
     card.querySelectorAll('[data-f]').forEach((input) => {
       const field = input.dataset.f;
-      const evt = input.type === 'checkbox' ? 'change' : 'change';
-      input.addEventListener(evt, () => {
+      input.addEventListener('change', () => {
         if (field === 'isNew') ex.isNew = input.checked;
         else if (field === 'sets') ex.sets = Number(input.value) || 1;
         else if (field === 'rest') { ex.rest = input.value; ex.restSec = parseRestSeconds(input.value); }
         else if (field.startsWith('reps')) ex.reps[field.replace('reps', '')] = input.value;
-        else if (field === 'name' && String(ex.exerciseId || '').startsWith('custom-') && Catalog.get(ex.exerciseId)) {
-          Catalog.get(ex.exerciseId).name_pt = input.value.trim() || ex.name;
-          Catalog.setCustom(state.customExercises);
-          ex.name = Catalog.get(ex.exerciseId).name_pt;
-        }
         else ex[field] = input.value;
         Store.save();
         renderAll();
       });
     });
 
+    // tocar no nome abre o seletor do catálogo para trocar o exercício desta posição
+    card.querySelector('[data-replace]').addEventListener('click', () => openPicker(w.id, exId));
+
+    const rn = card.querySelector('[data-rename-custom]');
+    if (rn) rn.addEventListener('click', () => {
+      const c = Catalog.get(ex.exerciseId);
+      if (!c) return;
+      const nn = prompt('Novo nome do exercício:', c.name_pt);
+      if (nn === null || !nn.trim()) return;
+      c.name_pt = nn.trim();
+      Catalog.setCustom(state.customExercises);
+      ex.name = c.name_pt;
+      Store.save();
+      renderAll();
+    });
+
     card.querySelector('[data-del]').addEventListener('click', () => {
-      if (!confirm(`Remover "${Catalog.name(ex)}" do treino?`)) return;
-      w.exercises = w.exercises.filter((x) => x.id !== exId);
+      if (!confirm(`Remover "${Catalog.name(ex)}" deste treino? A carga fica guardada para quando você voltar a fazer este exercício.`)) return;
+      retireCell(w, ex, 'removido');
       Store.save();
       renderWorkoutsTab();
       renderHome();
@@ -554,8 +704,16 @@ function wireEditorEvents(w) {
 // ---------------------------------------------------------------------------
 // CALENDÁRIO
 // ---------------------------------------------------------------------------
-const CAL_COLORS = { A: '#3b82f6', B: '#ef4444', C: '#f97316', D: '#eab308', CARDIO: '#22c55e' };
-const CAL_LABELS = { A: 'Treino A', B: 'Treino B', C: 'Treino C', D: 'Treino D', CARDIO: 'Cardio' };
+function calColor(wid) {
+  if (wid === 'CARDIO') return '#22c55e';
+  return (state.workouts[wid] && state.workouts[wid].color) || '#999';
+}
+
+function calLabel(wid) {
+  if (wid === 'CARDIO') return 'Cardio';
+  const w = state.workouts[wid];
+  return w ? w.name + (w.archived ? ' (arquivado)' : '') : wid;
+}
 
 function logsByDate() {
   const map = {};
@@ -583,11 +741,13 @@ function renderCalendar() {
   for (let d = 1; d <= daysInMonth; d++) {
     const iso = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
     const dayLogs = byDate[iso] || [];
-    const dots = dayLogs.map((l) => `<span class="dot" style="background:${CAL_COLORS[l.workoutId] || '#999'}"></span>`).join('');
+    const dots = dayLogs.map((l) => `<span class="dot" style="background:${calColor(l.workoutId)}"></span>`).join('');
     cells += `<div class="cal-day ${iso === todayStr ? 'today' : ''}" data-day="${iso}">${d}<div class="dots">${dots}</div></div>`;
   }
 
-  const legend = Object.keys(CAL_LABELS).map((k) => `<div class="item"><span class="dot" style="background:${CAL_COLORS[k]}"></span>${CAL_LABELS[k]}</div>`).join('');
+  // legenda: treinos ativos + arquivados que têm registros + cardio
+  const legendIds = [...allWorkoutIds().filter((id) => !state.workouts[id].archived || state.logs.some((l) => l.workoutId === id)), 'CARDIO'];
+  const legend = legendIds.map((k) => `<div class="item"><span class="dot" style="background:${calColor(k)}"></span>${escapeHtml(calLabel(k))}</div>`).join('');
 
   wrap.innerHTML = `
     <div class="card">
@@ -605,8 +765,9 @@ function renderCalendar() {
     </div>
   `;
 
-  document.getElementById('cal-prev').addEventListener('click', () => { calCursor = new Date(year, month - 1, 1); renderCalendar(); });
-  document.getElementById('cal-next').addEventListener('click', () => { calCursor = new Date(year, month + 1, 1); renderCalendar(); });
+  const go = (m) => { calCursor = new Date(year, m, 1); saveUI({ cal: `${calCursor.getFullYear()}-${String(calCursor.getMonth() + 1).padStart(2, '0')}` }); renderCalendar(); };
+  document.getElementById('cal-prev').addEventListener('click', () => go(month - 1));
+  document.getElementById('cal-next').addEventListener('click', () => go(month + 1));
   wrap.querySelectorAll('[data-day]').forEach((el) => el.addEventListener('click', () => showDayDetail(el.dataset.day)));
 
   if (calSelectedDate) showDayDetail(calSelectedDate);
@@ -614,6 +775,7 @@ function renderCalendar() {
 
 function showDayDetail(iso) {
   calSelectedDate = iso;
+  saveUI({ calSelectedDate: iso });
   const el = document.getElementById('day-detail');
   const dayLogs = (logsByDate()[iso] || []);
   if (dayLogs.length === 0) {
@@ -621,13 +783,12 @@ function showDayDetail(iso) {
     return;
   }
   el.innerHTML = dayLogs.map((log) => {
-    const w = state.workouts[log.workoutId];
-    const names = w ? log.exerciseIds.map((id) => {
-      const ex = w.exercises.find((x) => x.id === id);
+    // findExerciseById inclui células trocadas/removidas: o histórico continua com os nomes da época
+    const names = log.exerciseIds.map((id) => {
+      const ex = findExerciseById(id);
       return ex ? `<div class="ex-mini">✓ ${escapeHtml(Catalog.name(ex))}</div>` : '';
-    }).join('') : '';
-    const label = w ? w.name : (CAL_LABELS[log.workoutId] || log.workoutId);
-    return `<div style="margin-top:8px"><b>${escapeHtml(label)}</b>${names}</div>`;
+    }).join('');
+    return `<div style="margin-top:8px"><b>${escapeHtml(calLabel(log.workoutId))}</b>${names}</div>`;
   }).join('');
 }
 
@@ -659,7 +820,7 @@ function wireSettingsView() {
     Store.reset();
     state = Store.data;
     Catalog.setCustom(state.customExercises);
-    editorWorkoutId = 'A';
+    editorWorkoutId = null;
     renderAll();
     showToast('Dados resetados.');
   });
@@ -683,10 +844,10 @@ function downloadFile(filename, content, mime) {
 
 function exportWeightsCSV() {
   const rows = [['Treino', 'Exercicio', 'Peso (kg)', 'Atualizado em', 'ID do catalogo']];
-  for (const id of WORKOUT_IDS) {
+  for (const id of allWorkoutIds()) {
     const w = state.workouts[id];
     for (const e of w.exercises) {
-      rows.push([w.name, Catalog.name(e), e.weight || '', e.weightUpdatedAt ? formatDatePt(e.weightUpdatedAt) : '', e.exerciseId || '']);
+      rows.push([w.name + (w.archived ? ' (arquivado)' : ''), Catalog.name(e), e.weight || '', e.weightUpdatedAt ? formatDatePt(e.weightUpdatedAt) : '', e.exerciseId || '']);
     }
   }
   const csv = '﻿' + rows.map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(';')).join('\r\n');
@@ -708,7 +869,7 @@ function importBackupJSON(file) {
       Store.replaceAll(parsed);
       state = Store.data;
       Catalog.setCustom(state.customExercises);
-      editorWorkoutId = 'A';
+      editorWorkoutId = null;
       renderAll();
       showToast('Backup importado!');
       maybeOfferMigration();
@@ -786,6 +947,7 @@ function wireMediaFallback() {
 // SELETOR DE EXERCÍCIOS (tela de treinos > adicionar exercício)
 // ---------------------------------------------------------------------------
 let pickerWid = null;
+let pickerReplaceId = null; // id da célula que está sendo trocada (null = adicionando)
 let pickerTimer = null;
 
 // Quanto cada exercício do catálogo já foi usado: aparece em treinos + em registros do calendário.
@@ -793,7 +955,7 @@ function usageCounts() {
   const all = Object.values(state.workouts).flatMap((w) => w.exercises);
   const u = {};
   for (const e of all) if (e.exerciseId) u[e.exerciseId] = (u[e.exerciseId] || 0) + 1;
-  const local = Object.fromEntries(all.map((e) => [e.id, e]));
+  const local = Object.fromEntries(allCells().map((e) => [e.id, e]));
   for (const l of state.logs) {
     for (const id of l.exerciseIds) {
       const e = local[id];
@@ -808,8 +970,10 @@ function fillSelect(sel, values, allLabel) {
     values.map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join('');
 }
 
-function openPicker(wid) {
+function openPicker(wid, replaceId) {
   pickerWid = wid;
+  pickerReplaceId = replaceId || null;
+  document.getElementById('picker-title').textContent = pickerReplaceId ? 'Trocar exercício' : 'Adicionar exercício';
   fillSelect(document.getElementById('picker-muscle'), Catalog.muscles(), 'Todos os músculos');
   fillSelect(document.getElementById('picker-equip'), Catalog.equipments(), 'Todo equipamento');
   document.getElementById('picker-q').value = '';
@@ -823,6 +987,7 @@ function openPicker(wid) {
 function closePicker() {
   document.getElementById('picker').hidden = true;
   pickerWid = null;
+  pickerReplaceId = null;
   document.getElementById('add-ex-btn')?.focus();
 }
 
@@ -840,6 +1005,7 @@ function renderPickerList() {
   const results = Catalog.search({ q, muscle, equipment, usage: usageCounts() });
   const inWorkout = new Set(state.workouts[pickerWid].exercises.map((e) => e.exerciseId).filter(Boolean));
   const filtered = q.trim() || muscle || equipment;
+  const currentId = pickerReplaceId ? ((findExerciseById(pickerReplaceId) || {}).exerciseId || null) : null;
   count.textContent = `${results.length} exercício${results.length === 1 ? '' : 's'}${filtered ? '' : ' · os que você mais usa vêm primeiro'}`;
   if (results.length === 0) {
     list.innerHTML = `<div class="picker-empty">Nada encontrado${q.trim() ? ' para “' + escapeHtml(q.trim()) + '”' : ''}.` +
@@ -850,28 +1016,106 @@ function renderPickerList() {
     <button type="button" class="picker-item" data-pick-ex="${escapeHtml(ex.id)}">
       ${ex.thumb ? `<img class="picker-thumb" src="${escapeHtml(ex.thumb)}" alt="" loading="lazy" decoding="async">` : '<span class="picker-thumb" aria-hidden="true">🏋️</span>'}
       <span class="picker-body">
-        <span class="picker-name">${escapeHtml(ex.name_pt)}${inWorkout.has(ex.id) ? '<span class="picker-tag in">no treino</span>' : ''}${ex.custom ? '<span class="picker-tag cus">personalizado</span>' : ''}</span>
+        <span class="picker-name">${escapeHtml(ex.name_pt)}${ex.id === currentId ? '<span class="picker-tag in">atual</span>' : (inWorkout.has(ex.id) ? '<span class="picker-tag in">no treino</span>' : '')}${ex.custom ? '<span class="picker-tag cus">personalizado</span>' : ''}</span>
         <span class="picker-meta" style="display:block">${escapeHtml(ex.muscle_primary || '')} · ${escapeHtml(ex.equipment || '')}</span>
       </span>
     </button>`).join('');
 }
 
-function pickExercise(catalogId) {
+// Diálogo simples com várias escolhas (o confirm() nativo só tem duas). Fechar/cancelar => null.
+function askChoice({ title, text, options }) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('choice-modal');
+    const box = document.getElementById('choice-buttons');
+    document.getElementById('choice-title').textContent = title;
+    document.getElementById('choice-text').textContent = text;
+    box.innerHTML = options.map((o, i) => `<button type="button" class="${o.primary ? 'btn-primary' : 'btn-secondary'}" data-choice="${i}" style="width:100%;margin-top:8px">${escapeHtml(o.label)}</button>`).join('')
+      + '<button type="button" class="btn-secondary" data-choice="cancel" style="width:100%;margin-top:8px;border-style:dashed">Cancelar</button>';
+    const done = (v) => { modal.hidden = true; box.onclick = null; modal.onclick = null; resolve(v); };
+    box.onclick = (ev) => {
+      const b = ev.target.closest('[data-choice]');
+      if (b) done(b.dataset.choice === 'cancel' ? null : options[Number(b.dataset.choice)].value);
+    };
+    modal.onclick = (ev) => { if (ev.target === modal) done(null); };
+    modal.hidden = false;
+  });
+}
+
+function scrollToLastEditorCard() {
+  const cards = document.querySelectorAll('#editor-exercises .editor-ex-card');
+  if (cards.length) cards[cards.length - 1].scrollIntoView({ block: 'center' });
+}
+
+async function pickExercise(catalogId) {
   const cat = Catalog.get(catalogId);
   const w = state.workouts[pickerWid];
   if (!cat || !w) return;
-  w.exercises.push({
-    id: uid('ex'), exerciseId: cat.id, name: cat.name_pt, grip: '—', sets: 3,
-    reps: { M1: '10-12', M2: '8-10', M3: '6-8' }, rest: '60-90s', restSec: 75,
-    notes: '', isNew: true, weight: '', weightUpdatedAt: null, bestWeight: null,
-  });
+  if (pickerReplaceId) return replaceExercise(w, pickerReplaceId, cat);
+
+  const mem = state.weightMemory[cat.id];
+  const cell = newCell(cat);
+  const restored = mem && hasWeight(mem);
+  if (mem) applyMemory(cell, mem);
+  w.exercises.push(cell);
   Store.save();
   closePicker();
   renderWorkoutsTab();
   renderHome();
-  showToast(`“${cat.name_pt}” adicionado ao ${w.name}.`);
-  const cards = document.querySelectorAll('#editor-exercises .editor-ex-card');
-  if (cards.length) cards[cards.length - 1].scrollIntoView({ block: 'center' });
+  showToast(`“${cat.name_pt}” adicionado ao ${w.name}.${restored ? ' Carga anterior restaurada: ' + mem.weight + ' kg.' : ''}`);
+  scrollToLastEditorCard();
+}
+
+// Troca o exercício de uma posição do treino, sem perder nada:
+// a carga do antigo vai para a memória, a célula antiga fica no histórico (calendário) e a nova pode receber
+// a carga salva do novo exercício, a carga atual ou começar do zero.
+async function replaceExercise(w, cellId, cat) {
+  const idx = w.exercises.findIndex((e) => e.id === cellId);
+  if (idx < 0) return closePicker();
+  const old = w.exercises[idx];
+  if (old.exerciseId === cat.id) return closePicker();
+
+  const mem = state.weightMemory[cat.id];
+  const memHas = !!mem && hasWeight(mem);
+  const cur = hasWeight(old);
+  let choice = 'clear';
+  if (memHas && cur) {
+    choice = await askChoice({
+      title: 'Qual carga usar?',
+      text: `Você já treinou “${cat.name_pt}” com ${mem.weight} kg${mem.weightUpdatedAt ? ' (em ' + formatDatePt(mem.weightUpdatedAt) + ')' : ''}. A carga atual de “${Catalog.name(old)}” é ${old.weight} kg.`,
+      options: [
+        { label: `Usar a carga salva (${mem.weight} kg)`, value: 'memory', primary: true },
+        { label: `Manter a atual (${old.weight} kg)`, value: 'keep' },
+        { label: 'Começar sem carga', value: 'clear' },
+      ],
+    });
+  } else if (memHas) {
+    choice = 'memory';
+  } else if (cur) {
+    choice = await askChoice({
+      title: 'Manter a carga?',
+      text: `Manter ${old.weight} kg${old.bestWeight != null ? ' e o recorde' : ''} em “${cat.name_pt}”? A carga de “${Catalog.name(old)}” fica guardada para quando você voltar a ele.`,
+      options: [
+        { label: 'Manter a carga', value: 'keep', primary: true },
+        { label: 'Começar sem carga', value: 'clear' },
+      ],
+    });
+  }
+  if (choice === null) return; // cancelou: nada é trocado
+
+  const cell = newCell(cat, old);
+  if (choice === 'memory') applyMemory(cell, mem);
+  else if (choice === 'keep') { cell.weight = old.weight; cell.bestWeight = old.bestWeight; cell.weightUpdatedAt = old.weightUpdatedAt; }
+
+  rememberWeight(old);
+  w.exercises[idx] = cell; // mesma posição do treino
+  state.retiredExercises.push({ ...old, retiredAt: todayISO(), retiredFrom: w.id, retiredReason: 'trocado', replacedBy: cell.id });
+  rememberWeight(cell);
+  Store.save();
+  closePicker();
+  renderWorkoutsTab();
+  renderHome();
+  const extra = choice === 'memory' ? ` Carga salva restaurada: ${cell.weight} kg.` : (choice === 'keep' ? ` Carga mantida: ${cell.weight} kg.` : '');
+  showToast(`Trocado por “${cat.name_pt}”.${extra}`);
 }
 
 function showCustomForm(prefill) {
@@ -938,6 +1182,7 @@ async function initCatalog() {
     }
   } catch (e) { storagePersisted = null; }
   await Catalog.load();
+  seedWeightMemory();
   renderAll();
   maybeOfferMigration();
 }
@@ -979,6 +1224,7 @@ function runMigration() {
   // 3) vínculo por id (aborta sozinho se qualquer outro dado mudar)
   try {
     const rep = Catalog.apply(state);
+    seedWeightMemory();
     Store.save();
     showToast(`${rep.linked} exercícios vinculados ao catálogo.`);
   } catch (e) {

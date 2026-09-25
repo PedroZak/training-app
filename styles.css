@@ -341,3 +341,17 @@ button { font-family: inherit; }
 .picker-empty { text-align: center; color: var(--text-dim); font-size: 14px; padding: 24px 10px; }
 .picker-empty button { margin-top: 10px; }
 .picker-custom-btn { width: 100%; margin-top: 8px; }
+
+/* Treinos dinâmicos, troca de exercício e cardio diário */
+.modal.top { z-index: 60; }
+.tab-btn.tab-add { border-style: dashed; color: var(--text-dim); }
+.name-row { display: flex; gap: 8px; align-items: stretch; }
+.name-picker { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--border); background: var(--surface-2); color: var(--text); font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; }
+.name-picker span { min-width: 0; overflow-wrap: anywhere; }
+.name-picker svg { flex: none; color: var(--text-dim); }
+.archive-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.archive-row:last-child { border-bottom: none; }
+.archive-row .archive-name { font-weight: 700; font-size: 14px; }
+.cardio-card { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cardio-card .cardio-btn { width: auto; padding: 10px 14px; font-size: 14px; white-space: nowrap; }
+.cardio-card .cardio-done { color: var(--success); border-color: var(--success); white-space: nowrap; }

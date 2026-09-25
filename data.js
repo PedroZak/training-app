@@ -20,17 +20,6 @@ const CARDIO_INFO = {
   M3: '20min · Zona 2 (120-135bpm)',
 };
 
-// 0=Domingo .. 6=Sábado (Date.getDay())
-const WEEK_SCHEDULE = {
-  0: { type: 'rest', label: 'Descanso' },
-  1: { type: 'workout', id: 'A' },
-  2: { type: 'workout', id: 'B' },
-  3: { type: 'cardio', label: 'Cardio' },
-  4: { type: 'workout', id: 'C' },
-  5: { type: 'workout', id: 'D' },
-  6: { type: 'cardio', label: 'Cardio' },
-};
-
 const WORKOUT_META = {
   A: { name: 'Treino A', subtitle: 'Costas (largura) + Bíceps', color: '#3b82f6', warmup: '2x15 Face Pull leve' },
   B: { name: 'Treino B', subtitle: 'Peito (miolo) + Tríceps', color: '#ef4444', warmup: '' },
@@ -127,6 +116,7 @@ const Store = {
         id,
         ...WORKOUT_META[id],
         lastPerformedAt: null,
+        archived: false,
         exercises: SEED_EXERCISES[id].map((e) => ({ id: uid('ex'), ...e, restSec: parseRestSeconds(e.rest) })),
       };
     }
@@ -140,6 +130,9 @@ const Store = {
       today: { date: todayISO(), workoutId: null, checked: [] },
       logs: [], // { id, workoutId, dateISO, completedAt, exerciseIds: [] }
       customExercises: [], // exercícios criados no seletor (id 'custom-…'); ficam no estado => entram no backup/restore
+      workoutOrder: ['A', 'B', 'C', 'D'], // ordem das abas; treinos arquivados continuam aqui (histórico)
+      retiredExercises: [], // células trocadas/removidas: mantidas para o calendário continuar mostrando os nomes
+      weightMemory: {}, // exerciseId -> { weight, bestWeight, weightUpdatedAt }: a carga volta quando o exercício voltar
     };
   },
 
@@ -148,13 +141,31 @@ const Store = {
     if (!this.data.today) this.data.today = { date: todayISO(), workoutId: null, checked: [] };
     if (!this.data.logs) this.data.logs = [];
     if (!Array.isArray(this.data.customExercises)) this.data.customExercises = [];
-    for (const id of ['A', 'B', 'C', 'D']) {
-      const w = this.data.workouts[id];
-      if (!w) continue;
-      for (const e of w.exercises) {
-        if (e.bestWeight === undefined) {
-          const n = parseFloat(String(e.weight).replace(',', '.'));
-          e.bestWeight = Number.isFinite(n) ? n : null;
+    const d = this.data;
+    if (!Array.isArray(d.retiredExercises)) d.retiredExercises = [];
+    if (!Array.isArray(d.workoutOrder)) d.workoutOrder = [];
+    d.workoutOrder = d.workoutOrder.filter((id) => d.workouts[id]);
+    for (const id of Object.keys(d.workouts).sort()) if (!d.workoutOrder.includes(id)) d.workoutOrder.push(id);
+    const backfillBest = (e) => {
+      if (e.bestWeight === undefined) {
+        const n = parseFloat(String(e.weight).replace(',', '.'));
+        e.bestWeight = Number.isFinite(n) ? n : null;
+      }
+    };
+    for (const w of Object.values(d.workouts)) {
+      if (w.archived === undefined) w.archived = false;
+      w.exercises.forEach(backfillBest);
+    }
+    d.retiredExercises.forEach(backfillBest);
+    if (!d.weightMemory || typeof d.weightMemory !== 'object') {
+      d.weightMemory = {};
+      const cells = [...Object.values(d.workouts).flatMap((w) => w.exercises), ...d.retiredExercises];
+      for (const e of cells) {
+        if (!e.exerciseId) continue;
+        if (String(e.weight ?? '').trim() === '' && e.bestWeight == null) continue;
+        const prev = d.weightMemory[e.exerciseId];
+        if (!prev || String(e.weightUpdatedAt || '') >= String(prev.weightUpdatedAt || '')) {
+          d.weightMemory[e.exerciseId] = { weight: e.weight, bestWeight: e.bestWeight, weightUpdatedAt: e.weightUpdatedAt };
         }
       }
     }
@@ -190,8 +201,4 @@ function currentWeekInfo(settings) {
   else { mesoKey = 'M3'; isDeload = weekNum === 12; }
   if (settings.mesoOverride) mesoKey = settings.mesoOverride;
   return { weekNum, mesoKey, isDeload, meso: MESO_INFO[mesoKey] };
-}
-
-function todaySchedule() {
-  return WEEK_SCHEDULE[new Date().getDay()];
 }

@@ -107,7 +107,7 @@ const Catalog = {
   },
 
   _exercises(data) {
-    return Object.values(data.workouts).flatMap((w) => w.exercises);
+    return [...Object.values(data.workouts).flatMap((w) => w.exercises), ...(data.retiredExercises || [])];
   },
 
   plan(data) {
